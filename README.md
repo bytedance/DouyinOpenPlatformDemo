@@ -11,5 +11,5 @@
 [抖音开放平台](https://developer.open-douyin.com/)
 
 # License
-[iOS License](iOS/LICENSE)
+[iOS License](iOS/LICENSE)  
 [Android License](Android/LICENSE-DouyinOpenSDKDemo)

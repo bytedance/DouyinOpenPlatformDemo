@@ -12,7 +12,7 @@ Demo for DouyinOpenPlatform, include iOS and android.
 
 # License
 
-[iOS License](iOS/LICENSE)
+[iOS License](iOS/LICENSE)  
 [Android License](Android/LICENSE-DouyinOpenSDKDemo)
 
 
