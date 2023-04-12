@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6A41EF2729C84B4C00946C33 /* DYOpenDemoConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A41EF2629C84B4C00946C33 /* DYOpenDemoConstants.m */; };
+		6A41EF2A29C8515C00946C33 /* DYOpenDemoShareConfiger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A41EF2929C8515C00946C33 /* DYOpenDemoShareConfiger.m */; };
+		6AB44B2E29C9BD14003071C0 /* DYOpenDemoHostConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB44B2D29C9BD14003071C0 /* DYOpenDemoHostConfig.m */; };
+		6AD1C89A29C71D7600D7EE63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD1C89929C71D7600D7EE63 /* AppDelegate.m */; };
+		6AD1C8A029C71D7600D7EE63 /* DYOpenDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD1C89F29C71D7600D7EE63 /* DYOpenDemoViewController.m */; };
+		6AD1C8A329C71D7600D7EE63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AD1C8A129C71D7600D7EE63 /* Main.storyboard */; };
+		6AD1C8A529C71D7600D7EE63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AD1C8A429C71D7600D7EE63 /* Assets.xcassets */; };
+		6AD1C8A829C71D7600D7EE63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AD1C8A629C71D7600D7EE63 /* LaunchScreen.storyboard */; };
+		6AD1C8AB29C71D7600D7EE63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD1C8AA29C71D7600D7EE63 /* main.m */; };
+		6AD1C8B429C7201500D7EE63 /* DouyinOpenSDKDemo.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 6AD1C8B229C7201500D7EE63 /* DouyinOpenSDKDemo.debug.xcconfig */; };
+		6AD1C8B529C7201500D7EE63 /* Cosign.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 6AD1C8B329C7201500D7EE63 /* Cosign.xcconfig */; };
+		6AD1C8BB29C7270600D7EE63 /* DYOpenDemoInfoConfiger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD1C8BA29C7270600D7EE63 /* DYOpenDemoInfoConfiger.m */; };
+		81F2B81D4A747D7EE9B512F2 /* libPods-DouyinOpenSDKDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41CD4A3E4D75F07F45B5BBDC /* libPods-DouyinOpenSDKDemo.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		36BD8FA17C9D07FA015B9FC8 /* Pods-DouyinOpenSDKDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouyinOpenSDKDemo.release.xcconfig"; path = "Target Support Files/Pods-DouyinOpenSDKDemo/Pods-DouyinOpenSDKDemo.release.xcconfig"; sourceTree = "<group>"; };
+		41CD4A3E4D75F07F45B5BBDC /* libPods-DouyinOpenSDKDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DouyinOpenSDKDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A41EF2529C84B4C00946C33 /* DYOpenDemoConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYOpenDemoConstants.h; sourceTree = "<group>"; };
+		6A41EF2629C84B4C00946C33 /* DYOpenDemoConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYOpenDemoConstants.m; sourceTree = "<group>"; };
+		6A41EF2829C8515C00946C33 /* DYOpenDemoShareConfiger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYOpenDemoShareConfiger.h; sourceTree = "<group>"; };
+		6A41EF2929C8515C00946C33 /* DYOpenDemoShareConfiger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYOpenDemoShareConfiger.m; sourceTree = "<group>"; };
+		6AB44B2B29C9B6F6003071C0 /* DYOpenDemoHostConfigProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYOpenDemoHostConfigProtocol.h; sourceTree = "<group>"; };
+		6AB44B2C29C9BD14003071C0 /* DYOpenDemoHostConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYOpenDemoHostConfig.h; sourceTree = "<group>"; };
+		6AB44B2D29C9BD14003071C0 /* DYOpenDemoHostConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYOpenDemoHostConfig.m; sourceTree = "<group>"; };
+		6AD1C89529C71D7600D7EE63 /* DouyinOpenSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouyinOpenSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD1C89829C71D7600D7EE63 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6AD1C89929C71D7600D7EE63 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6AD1C89E29C71D7600D7EE63 /* DYOpenDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYOpenDemoViewController.h; sourceTree = "<group>"; };
+		6AD1C89F29C71D7600D7EE63 /* DYOpenDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYOpenDemoViewController.m; sourceTree = "<group>"; };
+		6AD1C8A229C71D7600D7EE63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6AD1C8A429C71D7600D7EE63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6AD1C8A729C71D7600D7EE63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6AD1C8A929C71D7600D7EE63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AD1C8AA29C71D7600D7EE63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6AD1C8B229C7201500D7EE63 /* DouyinOpenSDKDemo.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DouyinOpenSDKDemo.debug.xcconfig; sourceTree = "<group>"; };
+		6AD1C8B329C7201500D7EE63 /* Cosign.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Cosign.xcconfig; sourceTree = "<group>"; };
+		6AD1C8B929C7270600D7EE63 /* DYOpenDemoInfoConfiger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYOpenDemoInfoConfiger.h; sourceTree = "<group>"; };
+		6AD1C8BA29C7270600D7EE63 /* DYOpenDemoInfoConfiger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYOpenDemoInfoConfiger.m; sourceTree = "<group>"; };
+		CEE5C917B1A09C90A7C82AED /* Pods-DouyinOpenSDKDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouyinOpenSDKDemo.debug.xcconfig"; path = "Target Support Files/Pods-DouyinOpenSDKDemo/Pods-DouyinOpenSDKDemo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6AD1C89229C71D7600D7EE63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81F2B81D4A747D7EE9B512F2 /* libPods-DouyinOpenSDKDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6A41EF2429C84B3100946C33 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				6A41EF2529C84B4C00946C33 /* DYOpenDemoConstants.h */,
+				6A41EF2629C84B4C00946C33 /* DYOpenDemoConstants.m */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		6AB44B2A29C9B6C8003071C0 /* HostConfig */ = {
+			isa = PBXGroup;
+			children = (
+				6AB44B2B29C9B6F6003071C0 /* DYOpenDemoHostConfigProtocol.h */,
+				6AB44B2C29C9BD14003071C0 /* DYOpenDemoHostConfig.h */,
+				6AB44B2D29C9BD14003071C0 /* DYOpenDemoHostConfig.m */,
+			);
+			path = HostConfig;
+			sourceTree = "<group>";
+		};
+		6AD1C88C29C71D7500D7EE63 = {
+			isa = PBXGroup;
+			children = (
+				6AD1C89729C71D7600D7EE63 /* DouyinOpenSDKDemo */,
+				6AD1C89629C71D7600D7EE63 /* Products */,
+				7D4918D3D9CA2D99355669E1 /* Pods */,
+				A73B37C35B46CEE8BA753295 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6AD1C89629C71D7600D7EE63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6AD1C89529C71D7600D7EE63 /* DouyinOpenSDKDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6AD1C89729C71D7600D7EE63 /* DouyinOpenSDKDemo */ = {
+			isa = PBXGroup;
+			children = (
+				6AD1C89829C71D7600D7EE63 /* AppDelegate.h */,
+				6AD1C89929C71D7600D7EE63 /* AppDelegate.m */,
+				6AD1C89E29C71D7600D7EE63 /* DYOpenDemoViewController.h */,
+				6AD1C89F29C71D7600D7EE63 /* DYOpenDemoViewController.m */,
+				6AD1C8A129C71D7600D7EE63 /* Main.storyboard */,
+				6AD1C8A429C71D7600D7EE63 /* Assets.xcassets */,
+				6AD1C8A629C71D7600D7EE63 /* LaunchScreen.storyboard */,
+				6AD1C8A929C71D7600D7EE63 /* Info.plist */,
+				6AD1C8AA29C71D7600D7EE63 /* main.m */,
+				6AB44B2A29C9B6C8003071C0 /* HostConfig */,
+				6A41EF2429C84B3100946C33 /* Constants */,
+				6AD1C8B629C7264C00D7EE63 /* BusiConfiger */,
+				6AD1C8B129C7201500D7EE63 /* xcconfig */,
+			);
+			path = DouyinOpenSDKDemo;
+			sourceTree = "<group>";
+		};
+		6AD1C8B129C7201500D7EE63 /* xcconfig */ = {
+			isa = PBXGroup;
+			children = (
+				6AD1C8B329C7201500D7EE63 /* Cosign.xcconfig */,
+				6AD1C8B229C7201500D7EE63 /* DouyinOpenSDKDemo.debug.xcconfig */,
+			);
+			path = xcconfig;
+			sourceTree = "<group>";
+		};
+		6AD1C8B629C7264C00D7EE63 /* BusiConfiger */ = {
+			isa = PBXGroup;
+			children = (
+				6AD1C8B929C7270600D7EE63 /* DYOpenDemoInfoConfiger.h */,
+				6AD1C8BA29C7270600D7EE63 /* DYOpenDemoInfoConfiger.m */,
+				6A41EF2829C8515C00946C33 /* DYOpenDemoShareConfiger.h */,
+				6A41EF2929C8515C00946C33 /* DYOpenDemoShareConfiger.m */,
+			);
+			path = BusiConfiger;
+			sourceTree = "<group>";
+		};
+		7D4918D3D9CA2D99355669E1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CEE5C917B1A09C90A7C82AED /* Pods-DouyinOpenSDKDemo.debug.xcconfig */,
+				36BD8FA17C9D07FA015B9FC8 /* Pods-DouyinOpenSDKDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A73B37C35B46CEE8BA753295 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41CD4A3E4D75F07F45B5BBDC /* libPods-DouyinOpenSDKDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6AD1C89429C71D7600D7EE63 /* DouyinOpenSDKDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AD1C8AE29C71D7600D7EE63 /* Build configuration list for PBXNativeTarget "DouyinOpenSDKDemo" */;
+			buildPhases = (
+				7FDB91803B6C1EEA9FDD5CF6 /* [CP] Check Pods Manifest.lock */,
+				6AD1C89129C71D7600D7EE63 /* Sources */,
+				6AD1C89229C71D7600D7EE63 /* Frameworks */,
+				6AD1C89329C71D7600D7EE63 /* Resources */,
+				1013CB9DF9195AC35F2989B1 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DouyinOpenSDKDemo;
+			productName = DouyinOpenSDKDemo;
+			productReference = 6AD1C89529C71D7600D7EE63 /* DouyinOpenSDKDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6AD1C88D29C71D7500D7EE63 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					6AD1C89429C71D7600D7EE63 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+				};
+			};
+			buildConfigurationList = 6AD1C89029C71D7500D7EE63 /* Build configuration list for PBXProject "DouyinOpenSDKDemo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6AD1C88C29C71D7500D7EE63;
+			productRefGroup = 6AD1C89629C71D7600D7EE63 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6AD1C89429C71D7600D7EE63 /* DouyinOpenSDKDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6AD1C89329C71D7600D7EE63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AD1C8B529C7201500D7EE63 /* Cosign.xcconfig in Resources */,
+				6AD1C8A829C71D7600D7EE63 /* LaunchScreen.storyboard in Resources */,
+				6AD1C8A529C71D7600D7EE63 /* Assets.xcassets in Resources */,
+				6AD1C8B429C7201500D7EE63 /* DouyinOpenSDKDemo.debug.xcconfig in Resources */,
+				6AD1C8A329C71D7600D7EE63 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1013CB9DF9195AC35F2989B1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DouyinOpenSDKDemo/Pods-DouyinOpenSDKDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DouyinOpenSDKDemo/Pods-DouyinOpenSDKDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DouyinOpenSDKDemo/Pods-DouyinOpenSDKDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7FDB91803B6C1EEA9FDD5CF6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DouyinOpenSDKDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6AD1C89129C71D7600D7EE63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AD1C8BB29C7270600D7EE63 /* DYOpenDemoInfoConfiger.m in Sources */,
+				6AD1C8A029C71D7600D7EE63 /* DYOpenDemoViewController.m in Sources */,
+				6AD1C89A29C71D7600D7EE63 /* AppDelegate.m in Sources */,
+				6AD1C8AB29C71D7600D7EE63 /* main.m in Sources */,
+				6A41EF2A29C8515C00946C33 /* DYOpenDemoShareConfiger.m in Sources */,
+				6A41EF2729C84B4C00946C33 /* DYOpenDemoConstants.m in Sources */,
+				6AB44B2E29C9BD14003071C0 /* DYOpenDemoHostConfig.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6AD1C8A129C71D7600D7EE63 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6AD1C8A229C71D7600D7EE63 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6AD1C8A629C71D7600D7EE63 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6AD1C8A729C71D7600D7EE63 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6AD1C8AC29C71D7600D7EE63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6AD1C8AD29C71D7600D7EE63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6AD1C8AF29C71D7600D7EE63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AD1C8B229C7201500D7EE63 /* DouyinOpenSDKDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DouyinOpenSDKDemo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "抖音OpenSDK";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "该权限仅用于demo中分享功能测试，SDK仅需获取待分享内容的URI，SDK本身不申请此权限";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.douyinopen.demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6AD1C8B029C71D7600D7EE63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36BD8FA17C9D07FA015B9FC8 /* Pods-DouyinOpenSDKDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = XXHND5J98K;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DouyinOpenSDKDemo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "抖音OpenSDK";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "该权限仅用于demo中分享功能测试，SDK仅需获取待分享内容的URI，SDK本身不申请此权限";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.douyinopen.demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = DouyinDemoOpenPlatform.dist;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6AD1C89029C71D7500D7EE63 /* Build configuration list for PBXProject "DouyinOpenSDKDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AD1C8AC29C71D7600D7EE63 /* Debug */,
+				6AD1C8AD29C71D7600D7EE63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6AD1C8AE29C71D7600D7EE63 /* Build configuration list for PBXNativeTarget "DouyinOpenSDKDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AD1C8AF29C71D7600D7EE63 /* Debug */,
+				6AD1C8B029C71D7600D7EE63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6AD1C88D29C71D7500D7EE63 /* Project object */;
+}

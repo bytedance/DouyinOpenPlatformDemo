@@ -1,0 +1,8 @@
+#include "Pods/Target Support Files/Pods-DouyinOpenSDKDemo/Pods-DouyinOpenSDKDemo.debug.xcconfig"
+
+
+
+
+
+
+#include "Cosign.xcconfig"

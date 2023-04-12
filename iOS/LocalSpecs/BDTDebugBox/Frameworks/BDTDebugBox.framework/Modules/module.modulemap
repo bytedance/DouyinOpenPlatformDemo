@@ -1,0 +1,6 @@
+framework module BDTDebugBox {
+  umbrella header "BDTDebugBox-umbrella.h"
+
+  export *
+  module * { export * }
+}

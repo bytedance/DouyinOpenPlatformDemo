@@ -1,0 +1,4 @@
+LocalSpecs/BDTDebugBox/Frameworks/BDTDebugBox.framework/BDTDebugBox filter=lfs diff=lfs merge=lfs -text
+iOS/LocalSpecs/BDTDebugBox/Frameworks/BDTDebugBox.framework/BDTDebugBox filter=lfs diff=lfs merge=lfs -text
+release/demo/DouyinOpenSDKDemo/LocalSpecs/BDTDebugBox/Frameworks/BDTDebugBox.framework/BDTDebugBox filter=lfs diff=lfs merge=lfs -text
+iOS/release/demo/DouyinOpenSDKDemo/LocalSpecs/BDTDebugBox/Frameworks/BDTDebugBox.framework/BDTDebugBox filter=lfs diff=lfs merge=lfs -text

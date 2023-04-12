@@ -1,7 +1,7 @@
-中文README | [English](README.en_US.md)
+[中文README](README.md) | English
 
 # DouyinOpenPlatformDemo
-抖音开放平台 Demo，包含 iOS 及安卓等。
+A demo for DouyinOpenPlatform, include iOS and android.
 
 # DouyinOpenSDK
 * [iOS Demo README.md](./iOS/README.md)
