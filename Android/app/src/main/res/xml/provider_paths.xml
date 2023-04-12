@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-files-path name="imagedata" path="imageData/"/>
+    <external-files-path name="videodata" path="videoData/"/>
+    <external-files-path name="newmedia" path="newMedia/"/>
+    <external-files-path name="share_path" path="share_path/"/>
+</paths>

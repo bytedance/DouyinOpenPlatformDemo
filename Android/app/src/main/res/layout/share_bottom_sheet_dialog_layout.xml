@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/share_dialog_background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+
+        <ImageView
+            android:id="@+id/share_to_douyin_icon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/openplatform_share_douyin_icon"
+            app:layout_constraintBottom_toTopOf="@id/share_to_douyin_text"
+            app:layout_constraintEnd_toStartOf="@id/share_im_icon"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/share_to_douyin_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="发布到\n抖音"
+            android:textAlignment="center"
+            android:textColor="#161823"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/share_to_douyin_icon"
+            app:layout_constraintStart_toStartOf="@id/share_to_douyin_icon" />
+
+
+        <ImageView
+            android:id="@+id/share_im_icon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/openplatform_share_im_icon"
+            app:layout_constraintBottom_toTopOf="@+id/share_to_im_text"
+            app:layout_constraintEnd_toStartOf="@+id/share_daily_icon"
+            app:layout_constraintStart_toEndOf="@+id/share_to_douyin_icon" />
+
+        <TextView
+            android:id="@+id/share_to_im_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="分享给\n抖音朋友"
+            android:textAlignment="center"
+            android:textColor="#161823"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/share_im_icon"
+            app:layout_constraintStart_toStartOf="@id/share_im_icon" />
+
+
+        <ImageView
+            android:id="@+id/share_daily_icon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/openplatform_share_daily_icon"
+            app:layout_constraintBottom_toTopOf="@id/share_to_daily_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/share_im_icon" />
+
+
+        <TextView
+            android:id="@+id/share_to_daily_text"
+            android:layout_width="68dp"
+            android:layout_height="wrap_content"
+            android:text="转发到\n抖音日常"
+            android:textAlignment="center"
+            android:textColor="#161823"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/share_daily_icon"
+            app:layout_constraintStart_toStartOf="@id/share_daily_icon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

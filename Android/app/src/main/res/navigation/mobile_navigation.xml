@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_auth">
+
+    <fragment
+        android:id="@+id/navigation_auth"
+        android:name="com.bytedance.sdk.douyin.open.ui.auth.AuthFragment"
+        android:label="@string/title_auth"
+        tools:layout="@layout/fragment_auth" />
+
+    <fragment
+        android:id="@+id/navigation_share"
+        android:name="com.bytedance.sdk.douyin.open.ui.share.ShareFragment"
+        android:label="@string/title_share"
+        tools:layout="@layout/fragment_share" />
+
+    <fragment
+        android:id="@+id/navigation_common"
+        android:name="com.bytedance.sdk.douyin.open.ui.common.CommonFragment"
+        android:label="@string/title_common"
+        tools:layout="@layout/fragment_common" />
+</navigation>

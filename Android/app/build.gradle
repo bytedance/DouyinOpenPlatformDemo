@@ -1,0 +1,80 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+}
+apply from: "../config.gradle"
+
+android {
+    compileSdk 33
+    buildToolsVersion '33.0.1'
+
+    defaultConfig {
+        applicationId "com.bytedance.sdk.douyin.open"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        release {
+            storeFile file('./douyinopendemo.keystore')
+            storePassword 'douyinopendemo12345'
+            keyAlias 'douyinopendemo'
+            keyPassword 'douyinopendemo12345'
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.release
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation(project(path: ":base"))
+    if (gradle.ext.use_local_code) {
+        implementation(project(path: ":adapter"))
+    }
+
+    implementation project.ext.libs["core-ktx"]
+    implementation project.ext.libs["appcompat"]
+    implementation project.ext.libs["material"]
+    implementation project.ext.libs['constraintlayout']
+    implementation project.ext.libs["lifecycle-livedata-ktx"]
+    implementation project.ext.libs["lifecycle-viewmodel-ktx"]
+    implementation project.ext.libs["navigation-fragment-ktx"]
+    implementation project.ext.libs["navigation-ui-ktx"]
+    implementation project.ext.open_sdk["opensdk-china-external"]
+    implementation project.ext.open_sdk["opensdk-common"]
+
+    implementation project.ext.libs["kotlin-stdlib"]
+    implementation project.ext.libs["kotlinx-coroutines-core"]
+    implementation project.ext.libs["kotlinx-coroutines-android"]
+
+    implementation project.ext.libs["fresco"]
+    implementation project.ext.libs["gson"]
+
+    implementation project.ext.libs["easypermissions"]
+}

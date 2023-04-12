@@ -1,0 +1,33 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter()
+        maven { url 'https://artifact.bytedance.com/repository/AwemeOpenSDK' }
+    }
+}
+rootProject.name = "DouyinOpenSDKDemo"
+include ':app'
+include ':base'
+
+gradle.ext.use_local_code = false
+File file = new File(rootDir.absolutePath + "/local.properties")
+if (file.exists()) {
+    InputStream inputStream = file.newDataInputStream()
+    Properties properties = new Properties()
+    properties.load(inputStream)
+    ext.demo_internal_path = properties.getProperty("demo_internal_path")
+    if (ext.demo_internal_path != null && ext.demo_internal_path != "") {
+        gradle.ext.use_local_code = true
+        include(":adapter")
+        project(":adapter").projectDir = new File(ext.demo_internal_path)
+    }
+}
