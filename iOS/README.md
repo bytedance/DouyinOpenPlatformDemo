@@ -34,6 +34,8 @@
 * 修改 bundle id：需要与 clientKey 匹配（即与官网平台申请填写的一致） 
 * 修改证书：使用自己可用的证书
 
+tips:
+   本Demo在编译前请执行git lfs install 与 git lfs pull操作
 
 # 更多文档
 
