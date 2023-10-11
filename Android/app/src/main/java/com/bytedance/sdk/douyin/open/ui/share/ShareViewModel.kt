@@ -13,13 +13,10 @@
 // limitations under the License.
 package com.bytedance.sdk.douyin.open.ui.share
 
-import android.Manifest
 import android.app.Activity
 import android.content.ClipData
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.net.Uri
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -29,12 +26,10 @@ import com.bytedance.sdk.douyin.open.ability.share.OpenMediaInfo
 import com.bytedance.sdk.douyin.open.ability.share.OpenPhotoInfo
 import com.bytedance.sdk.douyin.open.ability.share.PhotoConfig
 import com.bytedance.sdk.douyin.open.ability.share.VideoConfig
-import com.bytedance.sdk.douyin.open.permission.SystemPermissionRequester
 import com.bytedance.sdk.douyin.open.utils.FileUtils
 import com.bytedance.sdk.douyin.open.utils.MediaUtils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import pub.devrel.easypermissions.EasyPermissions
 
 class ShareViewModel : ViewModel() {
 
@@ -53,28 +48,6 @@ class ShareViewModel : ViewModel() {
     }
 
     fun chooseMedia(fragment: ShareFragment, selectType: String) {
-        val activity = fragment.activity ?: return
-        val hasPermissions =
-            EasyPermissions.hasPermissions(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
-        if (!hasPermissions) {
-            SystemPermissionRequester.requestPermissions(
-                activity,
-                arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE),
-                object : SystemPermissionRequester.ResultCallback() {
-                    override fun onPermissionResult(permissions: Array<out String>, grantResults: IntArray) {
-                        grantResults.forEach {
-                            if (it != PackageManager.PERMISSION_GRANTED) {
-                                activity.runOnUiThread {
-                                    Toast.makeText(activity, "权限获取失败", Toast.LENGTH_SHORT).show()
-                                }
-                                return
-                            }
-                        }
-                        realChooseMedia(fragment, selectType)
-                    }
-                }
-            )
-        }
         realChooseMedia(fragment, selectType)
     }
 
@@ -107,15 +80,15 @@ class ShareViewModel : ViewModel() {
                 val openMediaInfos = ArrayList<OpenMediaInfo>()
                 chooseUris.forEachIndexed { index, uri ->
                     val contentType = MediaUtils.getContentTypeLocalFile(CustomApplication.context, uri)
+                    val context = CustomApplication.context
+                    val path = FileUtils.getPath(context, uri) ?: return@forEachIndexed
                     if (contentType.startsWith("video/")) {
-                        val path = FileUtils.getPath(CustomApplication.context, uri) ?: return@forEachIndexed
                         val videoInfo = VideoConfig.getVideoInfo(path) ?: return@forEachIndexed
                         openMediaInfos.add(OpenMediaInfo(uri, OpenMediaInfo.MEDIA_VIDEO, path, 0).apply {
                             this.videoInfo = videoInfo
                         })
                     } else if (contentType.startsWith("image/")) {
                         val imageWidthHeight = PhotoConfig.getImageWidthHeight(uri.toString()) ?: return@forEachIndexed
-                        val path = FileUtils.getPath(CustomApplication.context, uri) ?: return@forEachIndexed
                         val info = OpenMediaInfo(uri, OpenMediaInfo.MEDIA_IMAGE, path, 0).apply {
                             photoInfo = OpenPhotoInfo(imageWidthHeight[0], imageWidthHeight[1])
                         }
