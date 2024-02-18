@@ -9,7 +9,7 @@ A demo for DouyinOpenSDK, to demonstrate how to integrate `DouyinOpenSDK`, this 
 * Jump
 
 ## Module
-    
+
 * APP module
     * Auth implementation class [DYOpenDemoInfoConfiger - authItem](DouyinOpenSDKDemo/BusiConfiger/DYOpenDemoInfoConfiger.m)
     * Shared implementation class [DYOpenDemoShareConfiger](DouyinOpenSDKDemo/BusiConfiger/DYOpenDemoShareConfiger.m)
@@ -25,14 +25,29 @@ Firstly, you should register **a mobile application** on [Douyin Open Platform](
 
 > The demo has created a class: [DYOpenDemoHostConfig](DouyinOpenSDKDemo/HostConfig/DYOpenDemoHostConfig.m) which implementation interface [DYOpenDemoHostConfigProtocol](DouyinOpenSDKDemo/HostConfig/DYOpenDemoHostConfigProtocol.h), just modify as prompted inside (The most important thing is to configure the **ClientKey**)
 
-If you have an apple enterprise certificate, just run the demo directly to use the basic auth or share ability.
+1. Use `git clone + repo url`，download the repository locally
 
-If not you should change something like this:  
-* modify the clientKey applied for by yourself:  
-    1. Modify the return value of `+[DYOpenDemoHostConfig clientKey]`
-    2. In Xcode, click `TARGETS - info` and fill in the clientKey below `URL Types`
-* modify the bundle id: The bundle ID must match the clientKey (that is, the bundle ID must be the same as that in the application on the official website)
-* modify certificates: Use your own available certificates 
+2. Install pod
+
+   - Go to the downloaded Demo project and go to the iOS directory
+   - run `git lfs install` and `git lfs pull`
+   - run `pod install`，After success, you will see `Generating project & Integrating project`
+
+3. Compile & Run Demo
+
+   - Open the iOS directory DouyinOpenSDKDemo.xcworkspace
+
+   - If you have an apple enterprise certificate, just run the demo directly to use the basic auth or share ability.
+
+     If not you should change something like this:  
+
+     * modify the clientKey applied for by yourself:  
+       1. Modify the return value of `+[DYOpenDemoHostConfig clientKey]`
+       2. In Xcode, click `TARGETS - info` and fill in the clientKey below `URL Types`
+     * modify the bundle id: The bundle ID must match the clientKey (that is, the bundle ID must be the same as that in the application on the official website)
+     * modify certificates: Use your own available certificates 
+
+     
 
 ##  More
 
