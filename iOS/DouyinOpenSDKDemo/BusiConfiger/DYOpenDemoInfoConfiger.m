@@ -60,7 +60,7 @@
         [BDTDebugSectionItem itemWithTitle:@"🐯 开放能力" debugItems:@[
             [self authItem],
             [self shareItem],
-            [self jumpToDYProfileItem],
+//            [self jumpToDYProfileItem],
         ] isOpen:YES],
     ];
     return array;
@@ -144,33 +144,33 @@
     return item;
 }
 
-- (BDTDebugItem *)jumpToDYProfileItem
-{
-    BDTDebugItem *item = [BDTDebugItem itemWithUIType:BDTDebugItemUITypeTextAndArrow];
-    item.titleText = @"跳转个人主页";
-    item.styleModel.titleFont = [UIFont boldSystemFontOfSize:15];
-    item.execBlock = ^(BDTDebugBaseCell * _Nonnull baseCell) {
-        if ([[DouyinOpenSDKApplicationDelegate sharedInstance] appId].length <= 0) {
-            [BDTDebugHelper showAlertWithTitle:@"ClientKey 为空" message:@"请先初始化 OpenSDK" btnTextArray:@[@"OK"] extraConfigBlock:nil completeBlock:nil];
-            return;
-        }
-        NSString *hostOpenID = @""; // 当前抖音登录用户的 OpenID
-        NSString *targetOpenID = @""; // 目标用户的 OpenID
-        if (hostOpenID.length <= 0 || targetOpenID.length <= 0) {
-            [BDTDebugHelper showAlertWithTitle:@"OpenID 为空" message:@"请先自行实现 DYOpenDemoHostConfig 的 getAccessToken 接口得到" btnTextArray:@[@"OK"] extraConfigBlock:nil completeBlock:nil];
-            return;
-        }
-        DouyinOpenSDKShareRequest *request = [[DouyinOpenSDKShareRequest alloc] init];
-        request.shareAction = DouyinOpenSDKShareTypeJump;
-        request.landedPageType = DouyinOpenSDKLandedPageProfile;
-        request.openId = hostOpenID;
-        request.targetOpenId = targetOpenID;
-        [request sendShareRequestWithCompleteBlock:^(DouyinOpenSDKShareResponse * _Nonnull Response) {
-            NSLog(@"finish jump, errCode: %ld, errMsg: %@", Response.errCode, Response.errString ?: @"");
-        }];
-    };
-    return item;
-}
+//- (BDTDebugItem *)jumpToDYProfileItem
+//{
+//    BDTDebugItem *item = [BDTDebugItem itemWithUIType:BDTDebugItemUITypeTextAndArrow];
+//    item.titleText = @"跳转个人主页";
+//    item.styleModel.titleFont = [UIFont boldSystemFontOfSize:15];
+//    item.execBlock = ^(BDTDebugBaseCell * _Nonnull baseCell) {
+//        if ([[DouyinOpenSDKApplicationDelegate sharedInstance] appId].length <= 0) {
+//            [BDTDebugHelper showAlertWithTitle:@"ClientKey 为空" message:@"请先初始化 OpenSDK" btnTextArray:@[@"OK"] extraConfigBlock:nil completeBlock:nil];
+//            return;
+//        }
+//        NSString *hostOpenID = @""; // 当前抖音登录用户的 OpenID
+//        NSString *targetOpenID = @""; // 目标用户的 OpenID
+//        if (hostOpenID.length <= 0 || targetOpenID.length <= 0) {
+//            [BDTDebugHelper showAlertWithTitle:@"OpenID 为空" message:@"请先自行实现 DYOpenDemoHostConfig 的 getAccessToken 接口得到" btnTextArray:@[@"OK"] extraConfigBlock:nil completeBlock:nil];
+//            return;
+//        }
+//        DouyinOpenSDKShareRequest *request = [[DouyinOpenSDKShareRequest alloc] init];
+//        request.shareAction = DouyinOpenSDKShareTypeJump;
+//        request.landedPageType = DouyinOpenSDKLandedPageProfile;
+//        request.openId = hostOpenID;
+//        request.targetOpenId = targetOpenID;
+//        [request sendShareRequestWithCompleteBlock:^(DouyinOpenSDKShareResponse * _Nonnull Response) {
+//            NSLog(@"finish jump, errCode: %ld, errMsg: %@", Response.errCode, Response.errString ?: @"");
+//        }];
+//    };
+//    return item;
+//}
 
 #pragma mark - Private Methods
 - (void)onClickAuth

@@ -61,15 +61,15 @@
 {
     self.debugVC = bdtDebugVC;
     NSArray *array = @[
-        [BDTDebugSectionItem itemWithTitle:@"🦁 Meta Info" debugItems:@[
-            [self hashTagItem],
-            [self microAppIDItem],
-            [self microAppTitleItem],
-            [self microAppDescItem],
-            [self microAppLinkItem],
-            [self styleIDItem],
-            [self shareIDItem],
-        ] isOpen:NO],
+//        [BDTDebugSectionItem itemWithTitle:@"🦁 Meta Info" debugItems:@[
+//            [self hashTagItem],
+//            [self microAppIDItem],
+//            [self microAppTitleItem],
+//            [self microAppDescItem],
+//            [self microAppLinkItem],
+//            [self styleIDItem],
+//            [self shareIDItem],
+//        ] isOpen:NO],
         [BDTDebugSectionItem itemWithTitle:@"🦊 分享内容" debugItems:@[
             [self shareImageItem],
             [self shareVideoItem],
