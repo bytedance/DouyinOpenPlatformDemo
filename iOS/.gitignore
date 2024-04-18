@@ -118,3 +118,5 @@ Script/__dev__/
 
 # Business
 shells/cosign.sh
+LocalSpecs/BDTDebugBox/Frameworks/BDTDebugBox.framework/BDTDebugBox
+iOS/LocalSpecs/BDTDebugBox/Frameworks/BDTDebugBox.framework/BDTDebugBox
