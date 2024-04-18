@@ -31,10 +31,17 @@ import com.bytedance.sdk.open.aweme.utils.ThreadUtils
 import com.bytedance.sdk.open.douyin.DouYinOpenApiFactory
 import com.bytedance.sdk.open.douyin.ShareToContact
 import com.bytedance.sdk.open.douyin.model.ContactHtmlObject
+import com.bytedance.sdk.open.douyin.model.OpenRecord
 import kotlinx.coroutines.*
 import java.io.File
 import java.io.FileOutputStream
 
+/**
+ * 抖音分享能力
+ *
+ * POI锚点获取可以参考下面文档
+ * https://developer.open-douyin.com/docs/resource/zh-CN/dop/develop/openapi/video-management/douyin/search-video/video-poi
+ */
 object DouYinShare {
     const val IMAGE = 1
     const val ALBUM = 2
@@ -73,6 +80,7 @@ object DouYinShare {
                         mImagePaths = arrayList
                         isImageAlbum = false
                     }
+
                     ALBUM -> ImageAlbumObject().apply {
                         mediaList?.forEach {
                             it.takeIf { it.mediaType == OpenMediaInfo.MEDIA_IMAGE }?.let {
@@ -85,6 +93,7 @@ object DouYinShare {
                         mImagePaths = arrayList
                         isImageAlbum = true //是否开启图集模式,图集下不支持贴纸
                     }
+
                     VIDEO -> VideoObject().apply {
                         mediaList?.forEach {
                             it.takeIf { it.mediaType == OpenMediaInfo.MEDIA_VIDEO }?.let {
@@ -96,6 +105,7 @@ object DouYinShare {
                         }
                         mVideoPaths = arrayList
                     }
+
                     else -> MixObject().apply {
                         mediaList?.forEach {
                             val path = withContext(Dispatchers.IO) {
@@ -160,6 +170,7 @@ object DouYinShare {
                         }
                     })
                 }
+                poiId = "7065928383883905031" // poi锚点
             }
             request.callerLocalEntry = DouYinEntryActivity::class.java.canonicalName
             DouYinOpenApiFactory.create(activity)?.share(request)
@@ -256,6 +267,50 @@ object DouYinShare {
         } else {
             ThreadUtils.postInMain {
                 Toast.makeText(activity, "当前抖音版本不支持分享给好友", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    /**
+     * 打开抖音拍摄页
+     * 注意申请打开抖音拍摄页（aweme.capture）权限
+     * https://developer.open-douyin.com/docs/resource/zh-CN/dop/develop/sdk/mobile-app/share/android-douyin-camera
+     */
+    fun openRecord(activity: Activity) {
+        GlobalScope.launch(Dispatchers.Main) {
+            val request = OpenRecord.Request()
+            request.mState = CustomApplication.hostConfig.hostShareService().getShareId() //填写获取的share_id,用于webhook回调
+            // 小程序锚点
+            request.mMicroAppInfo = microAppInfo
+            // hashtag标签，推荐使用shareParam能精准插入hashtag位置
+            request.mHashTagList = ArrayList<String>().apply {
+                add("测试hash tag1")
+                add(" 测试hash tag2 ")
+                add("测试hashtag3")
+            }
+            request.shareParam = ShareParam().apply {
+                titleObject = TitleObject().apply {
+                    title = "这  还是新分享的标题 "
+                    // 可多次添加
+                    addMarker(HashtagTitleMarker().apply {
+                        name = "直接插入标题中hashtag"
+                        start = 2 //插入标题的位置，对应原始标题索引
+                    })
+                    addMarker(MentionTitleMarker().apply {
+                        openId = DouyinLoginManager.inst().douYinUser?.openId ?: "" // @用户对应的openid
+                        start = 3 //插入标题的位置，对应原始标题索引
+                    })
+                }
+                poiId = "7065928383883905031" // poi锚点
+            }
+            val douYinOpenApi = DouYinOpenApiFactory.create(activity)
+            //判断是否支持，可以根据这个是否隐藏图标
+            if (douYinOpenApi.isSupportOpenRecordPage) {
+                douYinOpenApi?.openRecordPage(request)
+            } else {
+                ThreadUtils.postInMain {
+                    Toast.makeText(activity, "当前抖音版本不支持拉起拍摄页", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }

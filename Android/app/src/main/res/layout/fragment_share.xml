@@ -79,6 +79,16 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/share_media_to_douyin" />
 
+    <Button
+        android:id="@+id/share_open_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:stateListAnimator="@null"
+        android:text="拉起拍摄页"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/share_html_to_im" />
 
     <FrameLayout
         android:id="@+id/fragment_container"

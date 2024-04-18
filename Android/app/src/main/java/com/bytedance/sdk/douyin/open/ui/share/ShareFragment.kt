@@ -24,7 +24,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bytedance.sdk.douyin.R
 import com.bytedance.sdk.douyin.databinding.FragmentShareBinding
-
+import com.bytedance.sdk.douyin.open.ability.share.DouYinShare
 import com.bytedance.sdk.douyin.open.ability.share.OpenMediaInfo
 
 class ShareFragment : Fragment() {
@@ -79,9 +79,11 @@ class ShareFragment : Fragment() {
             fragmentTransaction.replace(R.id.fragment_container, ShareHtmlFragment())
             fragmentTransaction.commitAllowingStateLoss()
         }
+        binding.shareOpenRecord.setOnClickListener {
+            DouYinShare.openRecord(requireActivity())
+        }
         return root
     }
-
 
 
     private fun initMediaView() {

@@ -19,6 +19,9 @@ import android.content.Intent
 import android.widget.Toast
 import com.bytedance.sdk.open.aweme.CommonConstants
 
+/**
+ * 用户留在抖音的情况下会广播通知
+ */
 class StayInDyReceiver : BroadcastReceiver() {
 
     companion object {
