@@ -30,7 +30,6 @@ Firstly, you should register **a mobile application** on [Douyin Open Platform](
 2. Install pod
 
    - Go to the downloaded Demo project and go to the iOS directory
-   - run `git lfs install` and `git lfs pull`
    - run `pod install`，After success, you will see `Generating project & Integrating project`
 
 3. Compile & Run Demo

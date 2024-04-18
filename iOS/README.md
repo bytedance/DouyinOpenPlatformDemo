@@ -31,7 +31,6 @@
 
    - 进入刚刚下载的 Demo 工程，进入 iOS 目录
 
-   - 执行git lfs install 与 git lfs pull操作
    - 执行 pod install，成功后会提示 Generating project & Integrating project
 
 3. 编译&运行demo

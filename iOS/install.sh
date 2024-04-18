@@ -8,7 +8,7 @@ LOCAL_PATH="LocalSpecs/BDTDebugBox/Frameworks"
 FRAMEWORK_FILE="$LOCAL_PATH/BDTDebugBox.framework"
 FRAMEWORK_BINARY="$FRAMEWORK_FILE/BDTDebugBox"
 if [ -f "$FRAMEWORK_BINARY" ]; then
-  echo "本地已存在完整的 BDTDebugBox.framework，无需下载。"
+#   echo "本地已存在完整的 BDTDebugBox.framework，无需下载。"
   exit 0
 fi
 
@@ -16,14 +16,14 @@ fi
 mkdir -p "$LOCAL_PATH"
 
 # 下载 zip 文件
-echo "正在从 $DOWNLOAD_URL 下载 BDTDebugBox.zip..."
+# echo "正在从 $DOWNLOAD_URL 下载 BDTDebugBox.zip..."
 curl -L -o "${LOCAL_PATH}/BDTDebugBox.zip" "$DOWNLOAD_URL"
 
 # 解压 zip 文件到目标路径
-echo "正在解压 BDTDebugBox.zip..."
+# echo "正在解压 BDTDebugBox.zip..."
 unzip -qo "${LOCAL_PATH}/BDTDebugBox.zip" -d "$LOCAL_PATH"
 
 # 删除临时 zip 文件
 rm "${LOCAL_PATH}/BDTDebugBox.zip"
 
-echo "BDTDebugBox.framework 已成功解压至 $LOCAL_PATH。"
+# echo "BDTDebugBox.framework 已成功解压至 $LOCAL_PATH。"
