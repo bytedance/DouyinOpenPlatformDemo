@@ -68,6 +68,10 @@ dependencies {
     implementation project.ext.libs["navigation-ui-ktx"]
     implementation project.ext.open_sdk["opensdk-china-external"]
     implementation project.ext.open_sdk["opensdk-common"]
+    implementation project.ext.open_sdk["open-profile"]
+    implementation project.ext.open_sdk["open-ticket"]
+    implementation project.ext.open_sdk["open-okhttp"]
+    implementation project.ext.open_sdk["open-picasso"]
 
     implementation project.ext.libs["kotlin-stdlib"]
     implementation project.ext.libs["kotlinx-coroutines-core"]
@@ -77,4 +81,7 @@ dependencies {
     implementation project.ext.libs["gson"]
 
     implementation project.ext.libs["easypermissions"]
+    implementation project.ext.libs["retrofit"]
+    implementation project.ext.libs["converter-gson"]
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }

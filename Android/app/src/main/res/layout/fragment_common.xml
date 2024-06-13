@@ -23,4 +23,13 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/jump_douyin_user_profile" />
 
+    <Button
+        android:id="@+id/jump_production"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="跳转名片作品管理页"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/jump_douyin_user_contact" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

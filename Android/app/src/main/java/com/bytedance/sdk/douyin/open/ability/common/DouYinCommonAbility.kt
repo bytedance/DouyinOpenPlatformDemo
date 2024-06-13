@@ -14,9 +14,12 @@
 package com.bytedance.sdk.douyin.open.ability.common
 
 import android.app.Activity
+import android.os.Bundle
 import android.widget.Toast
 import com.bytedance.sdk.douyin.open.CustomApplication
 import com.bytedance.sdk.douyin.open.ability.douyinapi.DouYinEntryActivity
+import com.bytedance.sdk.open.aweme.CommonConstants
+import com.bytedance.sdk.open.aweme.CommonConstants.SUPPORT
 import com.bytedance.sdk.open.aweme.commonability.CommonAbility
 import com.bytedance.sdk.open.aweme.utils.ThreadUtils
 import com.bytedance.sdk.open.douyin.DouYinOpenApiFactory
@@ -30,9 +33,7 @@ object DouYinCommonAbility {
      * 需要申请 内部权限下-抖音名片跳转 jump.profile 能力
      *
      */
-    fun jumpDouYinUserProfile(
-        activity: Activity, sourceOpenId: String, targetOpenId: String
-    ): Boolean {
+    fun jumpDouYinUserProfile(activity: Activity, targetOpenId: String): Boolean {
         //方式一 使用封装好的方法
 //        JumpUtils.jumpToDouyinProfile(activity, sourceOpenId, targetOpenId, "demo", DouYinEntryActivity::class.java.canonicalName)
         //方式二
@@ -46,12 +47,14 @@ object DouYinCommonAbility {
         request.callerLocalEntry = DouYinEntryActivity::class.java.canonicalName
         val data = JSONObject()
         try {
-            data.put("from_open_id", sourceOpenId)
             data.put("target_open_id", targetOpenId)
         } catch (e: JSONException) {
             e.printStackTrace()
         }
         request.data = data.toString()
+        request.extras = Bundle()
+        request.extras.putInt("custom_max_video_count", 2) // 2或3
+        request.extras.putString("opensdk_type", "card")
         return douYinOpenApi.openCommon(request)
     }
 
@@ -59,7 +62,7 @@ object DouYinCommonAbility {
      * 跳转抖音会话页
      * 需要申请 内部权限下-会话页跳转 jump.im.conversation 能力
      */
-    fun jumpDouYinUserContact(activity: Activity, sourceOpenId: String, targetOpenId: String): Boolean {
+    fun jumpDouYinUserContact(activity: Activity, targetOpenId: String): Boolean {
         //方式一
 //        JumpUtils.jumpToDouyinIM(activity, sourceOpenId, targetOpenId, "demo", DouYinEntryActivity::class.java.canonicalName)
         // 方式二
@@ -73,7 +76,6 @@ object DouYinCommonAbility {
         request.callerLocalEntry = DouYinEntryActivity::class.java.canonicalName
         val data = JSONObject()
         try {
-            data.put("from_open_id", sourceOpenId)
             data.put("target_open_id", targetOpenId)
         } catch (e: JSONException) {
             e.printStackTrace()
@@ -81,6 +83,37 @@ object DouYinCommonAbility {
         request.data = data.toString()
         return douYinOpenApi.openCommon(request)
     }
+
+    /**
+     * 跳转作品管理页
+     * 需要申请 内部权限下-跳转抖音名片自定义视频管理页 jump.profile.video_selection 能力
+     */
+    fun jumpVideoManager(activity: Activity, sourceOpenId: String): Boolean {
+        val douYinOpenApi = DouYinOpenApiFactory.create(activity) ?: return false
+        val supportApi = douYinOpenApi.isSupportApi(
+            SUPPORT.COMMON_ABILITY,
+            CommonConstants.SUPPORT.COMMON_API.COMMON_TYPE_JUMP_NEW_PRODUCTION
+        )
+        if (!supportApi) {
+            return false
+        }
+        val request = CommonAbility.Request()
+        request.commonType = CommonAbility.COMMON_TYPE_JUMP_PRODUCTION
+        request.mState = "state"
+        request.callerLocalEntry = DouYinEntryActivity::class.java.canonicalName
+        val data = JSONObject()
+        try {
+            data.put("from_open_id", sourceOpenId)
+        } catch (e: JSONException) {
+            e.printStackTrace()
+        }
+        request.data = data.toString()
+        request.extras = Bundle()
+        request.extras.putInt("custom_max_video_count", 2) // 2或3
+        request.extras.putString("opensdk_type", "card")
+        return douYinOpenApi.openCommon(request)
+    }
+
 
     fun onResponse(response: CommonAbility.Response) {
         //注意，跳转成功无回调，此处处理失败回调

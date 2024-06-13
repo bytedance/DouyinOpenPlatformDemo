@@ -39,22 +39,28 @@ class CommonFragment : Fragment() {
         _binding = FragmentCommonBinding.inflate(inflater, container, false)
         val root: View = binding.root
         binding.jumpDouyinUserProfile.setOnClickListener {
-            val host = DouyinLoginManager.inst().douYinUser?.openId
             val client = DouyinLoginManager.inst().clientDouYinUserLiveData.value?.openId
-            if (host.isNullOrEmpty() || client.isNullOrEmpty()) {
+            if (client.isNullOrEmpty()) {
                 Toast.makeText(context, "请在授权页进行主客态授权登陆", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            DouYinCommonAbility.jumpDouYinUserProfile(requireActivity(), host, client)
+            DouYinCommonAbility.jumpDouYinUserProfile(requireActivity(), client)
         }
         binding.jumpDouyinUserContact.setOnClickListener {
-            val host = DouyinLoginManager.inst().douYinUser?.openId
             val client = DouyinLoginManager.inst().clientDouYinUserLiveData.value?.openId
-            if (host.isNullOrEmpty() || client.isNullOrEmpty()) {
+            if (client.isNullOrEmpty()) {
                 Toast.makeText(context, "请在授权页进行主客态授权登陆", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            DouYinCommonAbility.jumpDouYinUserContact(requireActivity(), host, client)
+            DouYinCommonAbility.jumpDouYinUserContact(requireActivity(), client)
+        }
+        binding.jumpProduction.setOnClickListener {
+            val host = DouyinLoginManager.inst().douYinUser?.openId
+            if (host.isNullOrEmpty()) {
+                Toast.makeText(context, "请在授权页进行主客态授权登陆", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            DouYinCommonAbility.jumpVideoManager(requireActivity(), host)
         }
         return root
     }

@@ -22,4 +22,10 @@
         android:name="com.bytedance.sdk.douyin.open.ui.common.CommonFragment"
         android:label="@string/title_common"
         tools:layout="@layout/fragment_common" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.bytedance.sdk.douyin.open.ui.profile.DouYinProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_dou_yin_profile" />
 </navigation>
