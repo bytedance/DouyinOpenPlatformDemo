@@ -13,19 +13,15 @@
 // limitations under the License.
 package com.bytedance.sdk.douyin.open.base.config
 
-import com.bytedance.sdk.douyin.open.base.auth.DouYinUserBean
+import com.bytedance.sdk.douyin.open.base.base.OpenResult
 
-class EmptyHostConfig : HostConfig {
-    override fun getClientKey(): String = "aw5hkvchiclb1oe2"
+/**
+ * 宿主实现相关逻辑
+ * 主要用来请求服务端获取相关数据
+ */
+interface IHostTicketService : IHostService {
 
-    override fun getAuthScopeList(): List<String> = mutableListOf("user_info")
+    suspend fun getClientCode(clientKey: String): OpenResult<String>
 
-
-    override fun hostAuthService(): IHostAuthService = object : IHostAuthService {
-        override suspend fun getUserInfoByCode(clientKey: String, code: String, grantPermission: String): DouYinUserBean = DouYinUserBean()
-    }
-
-    override fun hostShareService(): IHostShareService = object : IHostShareService {
-        override suspend fun getShareId(): String = ""
-    }
+    suspend fun getAccessCode(clientKey: String, openid: String): OpenResult<String>
 }

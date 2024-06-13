@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="4dp"
+    tools:context=".open.ui.profile.DouYinProfileFragment">
+
+    <ScrollView
+        android:id="@+id/input_param_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="300dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/mind_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="使用前请确保已经授权登陆"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/host_openid_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="宿主openid"
+                app:layout_constraintBottom_toBottomOf="@id/host_openid_edit"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/host_openid_edit" />
+
+            <EditText
+                android:id="@+id/host_openid_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:hint="请填入当前用户的openid"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/host_openid_text"
+                app:layout_constraintTop_toBottomOf="@id/mind_text" />
+
+            <TextView
+                android:id="@+id/client_openid_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="客态openid"
+                app:layout_constraintBottom_toBottomOf="@id/client_openid_edit"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/client_openid_edit" />
+
+            <EditText
+                android:id="@+id/client_openid_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:hint="请填入客态用户的openid"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/client_openid_text"
+                app:layout_constraintTop_toBottomOf="@id/host_openid_edit" />
+
+            <TextView
+                android:id="@+id/video_list_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="视频列表"
+                app:layout_constraintBottom_toBottomOf="@id/video_list_edit"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/video_list_edit" />
+
+            <EditText
+                android:id="@+id/video_list_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:hint="请填入需要拉去的视频id列表,分割"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/video_list_text"
+                app:layout_constraintTop_toBottomOf="@id/client_openid_edit" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/is_host_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="是否主态"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/video_list_edit" />
+
+            <TextView
+                android:id="@+id/switch_mode_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="视频模式"
+                app:layout_constraintBottom_toBottomOf="@id/switch_mode_edit"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/switch_mode_edit" />
+
+            <EditText
+                android:id="@+id/switch_mode_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:hint="latest 展示最新视频 hottest 展示最热 custom 展示自定义视频"
+                android:text="hottest"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/video_list_text"
+                app:layout_constraintTop_toBottomOf="@id/is_host_switch" />
+
+            <TextView
+                android:id="@+id/cover_video_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="封面视频id"
+                app:layout_constraintBottom_toBottomOf="@id/cover_video_edit"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/cover_video_edit" />
+
+            <EditText
+                android:id="@+id/cover_video_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:hint=""
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/cover_video_text"
+                app:layout_constraintTop_toBottomOf="@id/switch_mode_edit" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+    <HorizontalScrollView
+        android:id="@+id/profile_api_scroll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/input_param_scroll"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/fetch_card_model_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="获取卡片数据"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/input_param_scroll" />
+
+            <Button
+                android:id="@+id/get_video_list_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="获取视频数据"
+                app:layout_constraintStart_toEndOf="@id/fetch_card_model_bt"
+                app:layout_constraintTop_toTopOf="@+id/fetch_card_model_bt" />
+
+            <Button
+                android:id="@+id/switch_mode_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="切换模式"
+                app:layout_constraintStart_toEndOf="@id/get_video_list_bt"
+                app:layout_constraintTop_toTopOf="@+id/fetch_card_model_bt" />
+
+            <Button
+                android:id="@+id/update_cover_video_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设置封面视频"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/switch_mode_bt"
+                app:layout_constraintTop_toTopOf="@+id/fetch_card_model_bt" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </HorizontalScrollView>
+
+    <GridLayout
+        android:id="@+id/ticket_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="2"
+        app:layout_constraintTop_toBottomOf="@id/profile_api_scroll">
+
+        <Button
+            android:id="@+id/get_client_ticket_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="获取clientTicket"
+            android:textSize="12dp" />
+
+        <Button
+            android:id="@+id/remove_client_ticket_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="移除clientTicket"
+            android:textSize="12dp" />
+
+        <Button
+            android:id="@+id/update_client_ticket_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="更新clientTicket"
+            android:textSize="12dp" />
+
+        <Button
+            android:id="@+id/get_access_ticket_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="获取accessTicket"
+            android:textSize="12dp" />
+
+        <Button
+            android:id="@+id/remove_access_ticket_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="移除accessTicket"
+            android:textSize="12dp" />
+
+        <Button
+            android:id="@+id/update_access_ticket_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="更新accessTicket"
+            android:textSize="12dp" />
+    </GridLayout>
+
+    <ScrollView
+        android:id="@+id/result_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:layout_marginTop="10dp"
+        android:fadingEdge="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ticket_layout"
+        app:layout_constraintVertical_bias="0">
+
+        <TextView
+            android:id="@+id/result_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

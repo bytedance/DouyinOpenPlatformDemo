@@ -21,6 +21,7 @@ import com.bytedance.sdk.douyin.open.CustomApplication
 import com.bytedance.sdk.douyin.open.CustomApplication.Companion.hostConfig
 import com.bytedance.sdk.douyin.open.ability.douyinapi.DouYinEntryActivity
 import com.bytedance.sdk.douyin.open.base.auth.DouYinUserBean
+import com.bytedance.sdk.douyin.open.base.config.HostConfigManager
 import com.bytedance.sdk.douyin.open.utils.ActivityStack
 import com.bytedance.sdk.open.aweme.authorize.model.Authorization
 import com.bytedance.sdk.open.douyin.DouYinOpenApiFactory
@@ -28,7 +29,7 @@ import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import java.util.*
+import java.util.UUID
 
 /**
  * @author:zhanglei 2022/7/21
@@ -59,7 +60,7 @@ class DouyinLoginManager private constructor() {
 
 
     private val _scopes = MutableLiveData<String>().apply {
-        value = "user_info"
+        value = HostConfigManager.getHostConfig().getAuthScopeList().joinToString(",")
     }
     var scopes: LiveData<String> = _scopes
 
@@ -77,6 +78,9 @@ class DouyinLoginManager private constructor() {
         clientDouYinUserLiveData.postValue(gson.fromJson(clientUserBeanStr, DouYinUserBean::class.java))
         douYinUser = douYinUserBean
         isLogin.observeForever {
+            saveData()
+        }
+        clientDouYinUserLiveData.observeForever {
             saveData()
         }
     }

@@ -19,7 +19,12 @@ import android.util.Log
 import com.bytedance.sdk.douyin.BuildConfig
 import com.bytedance.sdk.douyin.open.base.config.HostConfig
 import com.bytedance.sdk.douyin.open.base.config.HostConfigManager
+import com.bytedance.sdk.douyin.open.init.OpenHostInfoServiceImpl
+import com.bytedance.sdk.douyin.open.init.OpenHostTicketServiceImpl
 import com.bytedance.sdk.douyin.open.utils.ActivityStack
+import com.bytedance.sdk.open.aweme.adapter.image.picasso.PicassoOpenImageServiceImpl
+import com.bytedance.sdk.open.aweme.adapter.okhttp.OpenNetworkOkHttpServiceImpl
+import com.bytedance.sdk.open.aweme.init.DouYinOpenSDKConfig
 import com.bytedance.sdk.open.douyin.DouYinOpenApiFactory
 import com.bytedance.sdk.open.douyin.DouYinOpenConfig
 import com.facebook.drawee.backends.pipeline.Fresco
@@ -37,10 +42,19 @@ class CustomApplication : Application() {
     }
 
     private fun initDouYinOpenSDK() {
-        DouYinOpenApiFactory.init(DouYinOpenConfig(hostConfig.getClientKey()))
+//        DouYinOpenApiFactory.init(DouYinOpenConfig(hostConfig.getClientKey()))
         if (BuildConfig.DEBUG) {
             DouYinOpenApiFactory.setDebuggable(true)
         }
+        val douYinOpenSDKConfig = DouYinOpenSDKConfig.Builder()
+            .context(this)
+            .clientKey(hostConfig.getClientKey())
+            .networkService(OpenNetworkOkHttpServiceImpl())
+            .imageService(PicassoOpenImageServiceImpl())
+            .hostInfoService(OpenHostInfoServiceImpl())
+            .hostTicketService(OpenHostTicketServiceImpl())
+            .build()
+        DouYinOpenApiFactory.initConfig(douYinOpenSDKConfig)
     }
 
     private fun initHostConfig() {

@@ -20,8 +20,11 @@ interface HostConfig {
 
     fun getClientKey(): String
 
+    fun getAuthScopeList(): List<String>
+
     fun hostAuthService(): IHostAuthService
 
     fun hostShareService(): IHostShareService
 
+    fun hostTickerService(): IHostTicketService? = null
 }
