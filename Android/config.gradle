@@ -21,7 +21,7 @@ ext {
             "retrofit"                  : "com.squareup.retrofit2:retrofit:2.9.0",
             "converter-gson"            : "com.squareup.retrofit2:converter-gson:2.9.0"
     ]
-    def open_sdk_version = "0.2.0.3-rc"
+    def open_sdk_version = "0.2.0.3-rc1"
     open_sdk = [
             "opensdk-china-external": "com.bytedance.ies.ugc.aweme:opensdk-china-external:$open_sdk_version",
             "opensdk-common"        : "com.bytedance.ies.ugc.aweme:opensdk-common:$open_sdk_version",
