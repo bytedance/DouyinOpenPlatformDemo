@@ -22,11 +22,12 @@ import com.bytedance.sdk.douyin.open.base.config.HostConfigManager
 import com.bytedance.sdk.douyin.open.init.OpenHostInfoServiceImpl
 import com.bytedance.sdk.douyin.open.init.OpenHostTicketServiceImpl
 import com.bytedance.sdk.douyin.open.utils.ActivityStack
+import com.bytedance.sdk.open.aweme.adapter.event.applog.OpenAppLogUtils
+import com.bytedance.sdk.open.aweme.adapter.event.applog.OpenEventAppLogServiceImpl
 import com.bytedance.sdk.open.aweme.adapter.image.picasso.PicassoOpenImageServiceImpl
 import com.bytedance.sdk.open.aweme.adapter.okhttp.OpenNetworkOkHttpServiceImpl
 import com.bytedance.sdk.open.aweme.init.DouYinOpenSDKConfig
 import com.bytedance.sdk.open.douyin.DouYinOpenApiFactory
-import com.bytedance.sdk.open.douyin.DouYinOpenConfig
 import com.facebook.drawee.backends.pipeline.Fresco
 
 class CustomApplication : Application() {
@@ -53,8 +54,11 @@ class CustomApplication : Application() {
             .imageService(PicassoOpenImageServiceImpl())
             .hostInfoService(OpenHostInfoServiceImpl())
             .hostTicketService(OpenHostTicketServiceImpl())
+            .eventService(OpenEventAppLogServiceImpl())
             .build()
         DouYinOpenApiFactory.initConfig(douYinOpenSDKConfig)
+        //确保在用户同意隐私协议后调用
+        OpenAppLogUtils.init(this, "local_test")
     }
 
     private fun initHostConfig() {
