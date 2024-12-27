@@ -1,0 +1,16 @@
+{
+	"BuildOptions":{
+		"BUNDLE_NAME":"com.bytedance.open.sdk.open_source.demo",
+		"SELECT_BUILD_MODE":"",
+		"BUILD_PATH":{
+			"OUTPUT_PATH":"/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/build/outputs/default"
+		},
+		"SELECT_BUILD_PRODUCT":"default"
+	},
+	"CommonInfo":{
+		"crossplatform.projectType":"",
+		"project.ide.version":"5.0.3.910",
+		"current.select.product":"default",
+		"current.select.buildMode":""
+	}
+}

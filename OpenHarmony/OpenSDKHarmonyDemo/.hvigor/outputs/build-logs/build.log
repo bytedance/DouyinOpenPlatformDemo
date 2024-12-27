@@ -1,0 +1,168 @@
+[2024-12-27T11:43:20.171] [DEBUG] debug-file - env: nodejsVersion=v18.20.1
+[2024-12-27T11:43:20.191] [DEBUG] debug-file - env: daemon=true
+[2024-12-27T11:43:20.173] [DEBUG] debug-file - env: hvigor-config.json5 content = {
+  modelVersion: '5.0.0',
+  dependencies: {},
+  execution: {},
+  logging: {},
+  debugging: {},
+  nodeOptions: {}
+}
+[2024-12-27T11:43:20.502] [DEBUG] debug-file - hvigor start cli arguments:{
+  prop: [ 'product=default' ],
+  sync: true,
+  parallel: true,
+  incremental: true,
+  daemon: true,
+  _: [ '--analyze=normal' ]
+}
+[2024-12-27T11:43:20.502] [DEBUG] debug-file - java daemon tryConnect success
+[2024-12-27T11:43:20.513] [DEBUG] debug-file - session manager: set active socket. socketId=q9Dfag6-wNzjcQm_AAAB
+[2024-12-27T11:43:20.806] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2024-12-27T11:43:20.820] [DEBUG] debug-file - Hvigor init with startParameters:{
+  hvigorfileTypeCheck: false,
+  parallelExecution: true,
+  incrementalExecution: true,
+  printStackTrace: false,
+  daemon: true,
+  analyze: 0,
+  logLevel: Level { level: 20000, levelStr: 'INFO', colour: 'green' }
+}
+[2024-12-27T11:43:20.821] [DEBUG] debug-file - Since current hvigor version 5.8.9 differs from last hvigor version 
+      undefined, delete file-cache.json and task-cache.json.
+[2024-12-27T11:43:20.822] [DEBUG] debug-file - Cache service initialization finished in 2 ms 
+[2024-12-27T11:43:20.829] [DEBUG] debug-file - hvigorfile, resolving /Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/hvigorfile.ts
+[2024-12-27T11:43:21.551] [DEBUG] debug-file - hvigorfile, require result:  { default: { plugins: [] } }
+[2024-12-27T11:43:21.551] [DEBUG] debug-file - hvigorfile, binding system plugins null
+[2024-12-27T11:43:21.654] [DEBUG] debug-file - Start initialize project's product build option map with build mode debug.
+[2024-12-27T11:43:21.654] [DEBUG] debug-file - Picking option from product 'default' with build mode 'debug'.
+[2024-12-27T11:43:21.655] [DEBUG] debug-file - Product 'default' build option: {}
+[2024-12-27T11:43:21.655] [DEBUG] debug-file - End initialize project's product build option map with build mode 'debug'.
+[2024-12-27T11:43:21.657] [DEBUG] debug-file - Product 'default' using build option: {
+  "debuggable": true,
+  "strictMode": {
+    "caseSensitiveCheck": true,
+    "useNormalizedOHMUrl": true
+  }
+} in this build.
+[2024-12-27T11:43:21.658] [DEBUG] debug-file - not found resModel json file in : /Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/src/ohosTest/module.json5
+[2024-12-27T11:43:21.666] [DEBUG] debug-file - Local scan or download HarmonyOS sdk components toolchains,ets,js,native,previewer
+[2024-12-27T11:43:21.668] [DEBUG] debug-file - Local scan or download hmscore sdk components toolchains,ets,native
+[2024-12-27T11:43:21.671] [DEBUG] debug-file - Start recording SDK configuration permission data.
+[2024-12-27T11:43:21.691] [DEBUG] debug-file - Sdk init in 27 ms 
+[2024-12-27T11:43:21.703] [DEBUG] debug-file - Project task initialization takes 11 ms 
+[2024-12-27T11:43:21.703] [DEBUG] debug-file - hvigorfile, binding custom plugins []
+[2024-12-27T11:43:21.703] [DEBUG] debug-file - hvigorfile, no custom plugins were found in /Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/hvigorfile.ts
+[2024-12-27T11:43:21.703] [DEBUG] debug-file - hvigorfile, resolve finished /Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/hvigorfile.ts
+[2024-12-27T11:43:21.708] [DEBUG] debug-file - hvigorfile, resolving /Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/hvigorfile.ts
+[2024-12-27T11:43:21.712] [DEBUG] debug-file - hvigorfile, require result:  { default: { plugins: [] } }
+[2024-12-27T11:43:21.712] [DEBUG] debug-file - hvigorfile, binding system plugins null
+[2024-12-27T11:43:21.720] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2024-12-27T11:43:21.720] [DEBUG] debug-file - Target 'default' config: {}
+[2024-12-27T11:43:21.720] [DEBUG] debug-file - Target 'ohosTest' config: {}
+[2024-12-27T11:43:21.720] [DEBUG] debug-file - Module 'entry' target 'default' build option: {
+  "debuggable": true,
+  "copyFrom": "default",
+  "strictMode": {
+    "caseSensitiveCheck": true,
+    "useNormalizedOHMUrl": true
+  },
+  "name": "debug"
+}
+[2024-12-27T11:43:21.720] [DEBUG] debug-file - Module 'entry' target 'ohosTest' build option: {
+  "debuggable": true,
+  "strictMode": {
+    "caseSensitiveCheck": true,
+    "useNormalizedOHMUrl": true
+  },
+  "name": "default"
+}
+[2024-12-27T11:43:21.720] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2024-12-27T11:43:21.720] [DEBUG] debug-file - Module 'entry' target 'default' using build option: {
+  "debuggable": true,
+  "copyFrom": "default",
+  "strictMode": {
+    "caseSensitiveCheck": true,
+    "useNormalizedOHMUrl": true
+  },
+  "name": "debug"
+} in this build.
+[2024-12-27T11:43:21.723] [DEBUG] debug-file - Module entry task initialization takes 2 ms 
+[2024-12-27T11:43:21.724] [DEBUG] debug-file - hvigorfile, binding custom plugins []
+[2024-12-27T11:43:21.724] [DEBUG] debug-file - hvigorfile, no custom plugins were found in /Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/hvigorfile.ts
+[2024-12-27T11:43:21.724] [DEBUG] debug-file - hvigorfile, resolve finished /Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/hvigorfile.ts
+[2024-12-27T11:43:21.766] [DEBUG] debug-file - hvigorfile, resolve hvigorfile dependencies in 42 ms 
+[2024-12-27T11:43:21.767] [DEBUG] debug-file - project has submodules:entry
+[2024-12-27T11:43:21.768] [DEBUG] debug-file - start to load updatedOhPackageInfo to the disk
+[2024-12-27T11:43:21.773] [DEBUG] debug-file - load to the disk finished
+[2024-12-27T11:43:21.776] [WARN] debug-file - The current module 'OpenSDKHarmonyDemo' has dependency which is not installed at its oh-package.json5.
+[2024-12-27T11:43:21.776] [WARN] debug-file - The current module 'OpenSDKHarmonyDemo' has dependency which is not installed at its oh-package.json5.
+[2024-12-27T11:43:21.776] [DEBUG] debug-file - Module OpenSDKHarmonyDemo Collected Dependency: 
+[2024-12-27T11:43:21.776] [DEBUG] debug-file - Module OpenSDKHarmonyDemo's total dependency: 0
+[2024-12-27T11:43:21.777] [WARN] debug-file - The current module 'entry' has dependency which is not installed at its oh-package.json5.
+[2024-12-27T11:43:21.778] [WARN] debug-file - The current module 'entry' has dependency which is not installed at its oh-package.json5.
+[2024-12-27T11:43:21.778] [WARN] debug-file - The current module 'entry' has dependency which is not installed at its oh-package.json5.
+[2024-12-27T11:43:21.778] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2024-12-27T11:43:21.778] [DEBUG] debug-file - Module entry's total dependency: 0
+[2024-12-27T11:43:21.780] [DEBUG] debug-file - Configuration phase cost:956 ms 
+[2024-12-27T11:43:21.782] [DEBUG] debug-file - Configuration task cost before running: 971 ms 
+[2024-12-27T11:43:21.783] [DEBUG] debug-file - Executing task :entry:clean
+[2024-12-27T11:43:21.783] [DEBUG] debug-file - clean: Worker pool is inactive.
+[2024-12-27T11:43:21.895] [DEBUG] debug-file - entry : clean cost memory 1.8193435668945312
+[2024-12-27T11:43:21.896] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 84 ms 
+[2024-12-27T11:43:21.896] [INFO] debug-file - Finished :entry:clean... after 113 ms 
+[2024-12-27T11:43:21.896] [DEBUG] debug-file - Executing task ::clean
+[2024-12-27T11:43:21.896] [DEBUG] debug-file - clean: Worker pool is inactive.
+[2024-12-27T11:43:21.897] [DEBUG] debug-file - OpenSDKHarmonyDemo : clean cost memory 0.03466033935546875
+[2024-12-27T11:43:21.897] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 86 ms 
+[2024-12-27T11:43:21.897] [INFO] debug-file - Finished ::clean... after 1 ms 
+[2024-12-27T11:43:21.897] [DEBUG] debug-file - Executing task :entry:init
+[2024-12-27T11:43:21.897] [DEBUG] debug-file - entry : init cost memory 0.0139007568359375
+[2024-12-27T11:43:21.897] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 86 ms 
+[2024-12-27T11:43:21.897] [INFO] debug-file - Finished :entry:init... after 1 ms 
+[2024-12-27T11:43:21.897] [DEBUG] debug-file - Executing task ::init
+[2024-12-27T11:43:21.897] [DEBUG] debug-file - OpenSDKHarmonyDemo : init cost memory 0.0127410888671875
+[2024-12-27T11:43:21.897] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 86 ms 
+[2024-12-27T11:43:21.897] [INFO] debug-file - Finished ::init... after 1 ms 
+[2024-12-27T11:43:21.902] [DEBUG] debug-file - Module 'entry' target 'default' using build option: {
+  "debuggable": true,
+  "copyFrom": "default",
+  "strictMode": {
+    "caseSensitiveCheck": true,
+    "useNormalizedOHMUrl": true
+  },
+  "name": "debug"
+} in this build.
+[2024-12-27T11:43:21.904] [DEBUG] debug-file - Module 'entry' target 'ohosTest' using build option: {
+  "debuggable": true,
+  "strictMode": {
+    "caseSensitiveCheck": true,
+    "useNormalizedOHMUrl": true
+  },
+  "name": "default"
+} in this build.
+[2024-12-27T11:43:21.907] [DEBUG] debug-file - Since there is no instance or instance is terminated, create a new worker pool.
+[2024-12-27T11:43:21.907] [DEBUG] debug-file - Worker pool is initialized with config:  {
+  minPoolNum: 2,
+  maxPoolNum: undefined,
+  maxCoreSize: undefined,
+  cacheCapacity: undefined,
+  cacheTtl: undefined
+}
+[2024-12-27T11:43:21.908] [DEBUG] debug-file - Create  resident worker with id: 0.
+[2024-12-27T11:43:21.909] [DEBUG] debug-file - Create  resident worker with id: 1.
+[2024-12-27T11:43:21.910] [DEBUG] debug-file - Cleanup worker 0.
+[2024-12-27T11:43:21.910] [DEBUG] debug-file - Worker 0 has been cleaned up.
+[2024-12-27T11:43:21.910] [DEBUG] debug-file - Current idle worker size: 1.
+[2024-12-27T11:43:21.910] [DEBUG] debug-file - Current resident worker size: 2.
+[2024-12-27T11:43:21.910] [DEBUG] debug-file - Cleanup worker 1.
+[2024-12-27T11:43:21.910] [DEBUG] debug-file - Worker 1 has been cleaned up.
+[2024-12-27T11:43:21.910] [DEBUG] debug-file - Current idle worker size: 0.
+[2024-12-27T11:43:21.910] [DEBUG] debug-file - Current resident worker size: 2.
+[2024-12-27T11:43:21.910] [DEBUG] debug-file - hvigor build process will be closed.
+[2024-12-27T11:43:22.084] [DEBUG] debug-file - worker[0] exits with exit code 0.
+[2024-12-27T11:43:22.085] [DEBUG] debug-file - worker[1] exits with exit code 0.
+[2024-12-27T11:43:22.099] [DEBUG] debug-file - session manager: send message to worker process.
+[2024-12-27T11:43:22.099] [DEBUG] debug-file - session manager: send message to worker process.
+[2024-12-27T11:43:22.099] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2024-12-27T11:43:22.099] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.

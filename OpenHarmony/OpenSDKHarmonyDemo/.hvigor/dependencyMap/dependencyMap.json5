@@ -1,0 +1,1 @@
+{"basePath":"/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/.hvigor/dependencyMap/dependencyMap.json5","rootDependency":"./oh-package.json5","dependencyMap":{"entry":"./entry/oh-package.json5"},"modules":[{"name":"entry","srcPath":"../../../entry"}]}

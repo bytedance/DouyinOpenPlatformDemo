@@ -1,0 +1,184 @@
+{
+  "ohos-module-entry": {
+    "SELECT_TARGET": "default",
+    "MODULE_BUILD_DIR": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/build",
+    "DEPENDENCY_INFO": {},
+    "TARGETS": {
+      "default": {
+        "SOURCE_ROOT": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/src/main",
+        "RESOURCES_PATH": [
+          "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/src/main/resources"
+        ],
+        "BUILD_PATH": {
+          "OUTPUT_PATH": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/build/default/outputs/default",
+          "INTERMEDIA_PATH": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/build/default/intermediates",
+          "JS_ASSETS_PATH": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/build/default/intermediates/loader_out/default",
+          "JS_LITE_ASSETS_PATH": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/build/default/intermediates/loader_out_lite/default",
+          "RES_PATH": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/build/default/intermediates/res/default",
+          "RES_PROFILE_PATH": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/build/default/intermediates/res/default/resources/base/profile",
+          "ETS_SUPER_VISUAL_PATH": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/build/default/cache/default/default@CompileArkTS/esmodule",
+          "JS_SUPER_VISUAL_PATH": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/build/default/cache/default/default@CompileJS/jsbundle",
+          "WORKER_LOADER": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/build/default/intermediates/loader/default/loader.json",
+          "MANIFEST_JSON": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/build/default/intermediates/manifest/default",
+          "OUTPUT_METADATA_JSON": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/build/default/intermediates/hap_metadata/default/output_metadata.json"
+        },
+        "BUILD_OPTION": {
+          "debuggable": true
+        }
+      },
+      "ohosTest": {
+        "SOURCE_ROOT": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/src/ohosTest",
+        "RESOURCES_PATH": [
+          "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/src/ohosTest/resources"
+        ],
+        "BUILD_PATH": {
+          "OUTPUT_PATH": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/build/default/outputs/ohosTest",
+          "INTERMEDIA_PATH": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/build/default/intermediates",
+          "JS_ASSETS_PATH": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/build/default/intermediates/loader_out/ohosTest",
+          "JS_LITE_ASSETS_PATH": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/build/default/intermediates/loader_out_lite/ohosTest",
+          "RES_PATH": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/build/default/intermediates/res/ohosTest",
+          "RES_PROFILE_PATH": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/build/default/intermediates/res/ohosTest/resources/base/profile",
+          "ETS_SUPER_VISUAL_PATH": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/build/default/cache/ohosTest/ohosTest@OhosTestCompileArkTS/esmodule",
+          "JS_SUPER_VISUAL_PATH": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/build/default/cache/ohosTest/ohosTest@OhosTestCompileJS/jsbundle",
+          "WORKER_LOADER": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/build/default/intermediates/loader/ohosTest/loader.json",
+          "MANIFEST_JSON": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/build/default/intermediates/manifest/ohosTest",
+          "OUTPUT_METADATA_JSON": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry/build/default/intermediates/hap_metadata/ohosTest/output_metadata.json"
+        },
+        "BUILD_OPTION": {
+          "debuggable": true
+        }
+      }
+    },
+    "BUILD_OPTION": {
+      "default-default": {
+        "debuggable": true,
+        "copyFrom": "default",
+        "strictMode": {
+          "caseSensitiveCheck": true,
+          "useNormalizedOHMUrl": true
+        },
+        "name": "debug"
+      }
+    },
+    "BUILD_PROFILE_OPT": {
+      "apiType": "stageMode",
+      "buildOption": {},
+      "buildOptionSet": [
+        {
+          "name": "release",
+          "arkOptions": {
+            "obfuscation": {
+              "ruleOptions": {
+                "enable": false,
+                "files": [
+                  "./obfuscation-rules.txt"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "default"
+        },
+        {
+          "name": "debug"
+        }
+      ],
+      "targets": [
+        {
+          "name": "default"
+        },
+        {
+          "name": "ohosTest"
+        }
+      ]
+    }
+  },
+  "ohos-project": {
+    "SELECT_PRODUCT_NAME": "default",
+    "MODULE_BUILD_DIR": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/build",
+    "BUNDLE_NAME": "com.bytedance.open.sdk.open_source.demo",
+    "BUILD_PATH": {
+      "OUTPUT_PATH": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/build/outputs/default"
+    },
+    "MODULES": [
+      {
+        "name": "entry",
+        "srcPath": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo/entry",
+        "targets": [
+          {
+            "name": "default",
+            "applyToProducts": [
+              "default"
+            ]
+          }
+        ],
+        "belongProjectPath": "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo"
+      }
+    ],
+    "PROFILE_OPT": {
+      "app": {
+        "products": [
+          {
+            "name": "default",
+            "signingConfig": "default",
+            "compatibleSdkVersion": "5.0.0(12)",
+            "runtimeOS": "HarmonyOS",
+            "buildOption": {
+              "strictMode": {
+                "caseSensitiveCheck": true,
+                "useNormalizedOHMUrl": true
+              }
+            }
+          }
+        ],
+        "buildModeSet": [
+          {
+            "name": "debug"
+          },
+          {
+            "name": "release"
+          }
+        ],
+        "signingConfigs": [
+          {
+            "name": "default",
+            "type": "HarmonyOS",
+            "material": {
+              "certpath": "/Users/zhanglei/.ohos/config/default_OpenSDKHarmonyDemo_SBbLW9aLSsMeZyDVCdXZ90fpSaZQa6hcd53a2GW8Hos=.cer",
+              "storePassword": "0000001B2FD526158D2B88BA68A94ADDA6CA3C4717C71C133215B6CD45C9779D38ACC3A8A64A46CEC326E4",
+              "keyAlias": "debugKey",
+              "keyPassword": "0000001BE5FD93FCEE1D4994E641E19E3EF35BB046A7165EB08715A444EFC5E772AC21B67D329B86808ABE",
+              "profile": "/Users/zhanglei/.ohos/config/default_OpenSDKHarmonyDemo_SBbLW9aLSsMeZyDVCdXZ90fpSaZQa6hcd53a2GW8Hos=.p7b",
+              "signAlg": "SHA256withECDSA",
+              "storeFile": "/Users/zhanglei/.ohos/config/default_OpenSDKHarmonyDemo_SBbLW9aLSsMeZyDVCdXZ90fpSaZQa6hcd53a2GW8Hos=.p12"
+            }
+          }
+        ]
+      },
+      "modules": [
+        {
+          "name": "entry",
+          "srcPath": "./entry",
+          "targets": [
+            {
+              "name": "default",
+              "applyToProducts": [
+                "default"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "CONFIG_PROPERTIES": {
+      "enableSignTask": true,
+      "skipNativeIncremental": false,
+      "hvigor.keepDependency": true
+    },
+    "OVERALL_PROJECT_PATHS": [
+      "/Users/zhanglei/learn/GitHub/DouyinOpenPlatformDemo/OpenHarmony/OpenSDKHarmonyDemo"
+    ]
+  },
+  "version": 1
+}

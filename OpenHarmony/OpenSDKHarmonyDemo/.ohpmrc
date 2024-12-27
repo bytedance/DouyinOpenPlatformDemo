@@ -1,0 +1,13 @@
+publish_registry=https://ohpm.byted.org/repos/ohpm
+registry=https://ohpm.byted.org/repos/ohpm/,http://artifact.bytedance.com/repository/byted-ohpm/
+# 开启依赖名称校验，本地依赖名称与其对应的包名是否一致，若不一致会导致命令执行失败
+enforce_dependency_key=true
+# 是否开启默认的冲突处理机制
+resolve_conflict=true
+# 是否安装工程所有模块的依赖
+install_all=true
+# 启用跨进程锁，ohpm不支持在同一个工程下并行运行多个ohpm 命令，保证串行执行
+enable_cross_process_lock=true
+# 开启依赖扫描功能，在执行ohpm publish命令时，会检查三方依赖是否都声明在dependencies中
+ensure_dependency_include=true
+strict_ssl=false

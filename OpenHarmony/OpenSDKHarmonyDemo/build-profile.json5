@@ -1,0 +1,55 @@
+{
+  "app": {
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "compatibleSdkVersion": "5.0.0(12)",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug"
+      },
+      {
+        "name": "release"
+      }
+    ],
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "/Users/zhanglei/.ohos/config/default_OpenSDKHarmonyDemo_SBbLW9aLSsMeZyDVCdXZ90fpSaZQa6hcd53a2GW8Hos=.cer",
+          "storePassword": "0000001B2FD526158D2B88BA68A94ADDA6CA3C4717C71C133215B6CD45C9779D38ACC3A8A64A46CEC326E4",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001BE5FD93FCEE1D4994E641E19E3EF35BB046A7165EB08715A444EFC5E772AC21B67D329B86808ABE",
+          "profile": "/Users/zhanglei/.ohos/config/default_OpenSDKHarmonyDemo_SBbLW9aLSsMeZyDVCdXZ90fpSaZQa6hcd53a2GW8Hos=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "/Users/zhanglei/.ohos/config/default_OpenSDKHarmonyDemo_SBbLW9aLSsMeZyDVCdXZ90fpSaZQa6hcd53a2GW8Hos=.p12"
+        }
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}
