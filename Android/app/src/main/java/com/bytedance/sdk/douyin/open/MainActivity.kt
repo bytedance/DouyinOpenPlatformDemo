@@ -21,6 +21,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.bytedance.sdk.douyin.R
 import com.bytedance.sdk.douyin.databinding.ActivityMainBinding
+import com.bytedance.sdk.douyin.open.business_module.privacy_policy.PrivacyPolicyAgreementUtils
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -45,5 +46,9 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        if (!PrivacyPolicyAgreementUtils.isUserAgreePrivacyPolicy()) {
+            PrivacyPolicyAgreementUtils.showPrivacyPolicyDialog(this)
+        }
     }
 }

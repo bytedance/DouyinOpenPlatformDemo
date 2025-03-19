@@ -11,11 +11,9 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         jcenter()
+        maven { url "https://jcenter.bintray.com/" }
         maven { url 'https://artifact.bytedance.com/repository/AwemeOpenSDK' }
-        maven {url"https://artifact.bytedance.com/repository/AwemeOpenSDK_snapshot"}
-        maven {
-            url 'https://artifact.bytedance.com/repository/Volcengine/'
-        }
+        maven { url "https://artifact.bytedance.com/repository/AwemeOpenSDK_snapshot" }
     }
 }
 rootProject.name = "DouyinOpenSDKDemo"

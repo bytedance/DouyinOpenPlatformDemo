@@ -71,7 +71,6 @@ dependencies {
     implementation project.ext.open_sdk["open-ticket"]
     implementation project.ext.open_sdk["open-okhttp"]
     implementation project.ext.open_sdk["open-picasso"]
-    implementation project.ext.open_sdk["open-applog"]
 
     implementation project.ext.libs["kotlin-stdlib"]
     implementation project.ext.libs["kotlinx-coroutines-core"]
@@ -84,8 +83,4 @@ dependencies {
     implementation project.ext.libs["retrofit"]
     implementation project.ext.libs["converter-gson"]
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-
-    // 在 build.gradle 文件的 dependencies 中添加
-    implementation 'com.bytedance.applog:RangersAppLog-Lite-cn:6.16.11'
-    debugImplementation 'com.bytedance.applog:RangersAppLog-DevTools:3.4.7'
 }
