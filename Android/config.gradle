@@ -25,7 +25,7 @@ ext {
      * open sdk 版本
      * 查看变更记录： https://developer.open-douyin.com/docs/resource/zh-CN/dop/develop/sdk/mobile-app/sdk-download/android
      */
-    def open_sdk_version = "0.2.0.8"
+    def open_sdk_version = "0.2.0.9"
     open_sdk = [
             "opensdk-china-external": "com.bytedance.ies.ugc.aweme:opensdk-china-external:$open_sdk_version",
             "opensdk-common"        : "com.bytedance.ies.ugc.aweme:opensdk-common:$open_sdk_version",
