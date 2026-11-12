@@ -18,6 +18,12 @@
 #import <BDTDebugBox/BDTDebugHelper.h>
 #import "DYOpenDemoHostConfig.h"
 
+@interface DYOpenDemoSceneDelegate : UIResponder <UIWindowSceneDelegate>
+
+@property (nonatomic, strong) UIWindow *window;
+
+@end
+
 @interface AppDelegate () <DouyinOpenSDKLogDelegate>
 
 @end
@@ -26,15 +32,6 @@
 
 #pragma mark - Life Cycle
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"DYOpenDemoViewController"];
-    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:vc];
-    
-    self.window = [[UIWindow alloc] init];
-    self.window.rootViewController = navi;
-    [self.window makeKeyAndVisible];
-    
     // register DouyinOpenSDK
 //    [self registerDouyinOpenSDKWithApplication:application launchOptions:launchOptions];
     
@@ -84,6 +81,48 @@
 - (void)onLog:(NSString *)logInfo
 {
     NSLog(@"%@", logInfo);
+}
+
+@end
+
+@implementation DYOpenDemoSceneDelegate
+
+- (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions
+{
+    if (![scene isKindOfClass:[UIWindowScene class]]) {
+        return;
+    }
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"DYOpenDemoViewController"];
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:vc];
+    self.window = [[UIWindow alloc] initWithWindowScene:(UIWindowScene *)scene];
+    self.window.rootViewController = navi;
+    ((AppDelegate *)UIApplication.sharedApplication.delegate).window = self.window;
+    [self.window makeKeyAndVisible];
+
+    NSLog(@"[OpenSDKDemo] Scene connected, URL count: %lu", (unsigned long)connectionOptions.URLContexts.count);
+    // 冷启动的回跳 URL 通过 connectionOptions 进入，与热启动共用处理入口。
+    [self scene:scene openURLContexts:connectionOptions.URLContexts];
+}
+
+- (void)scene:(UIScene *)scene openURLContexts:(NSSet<UIOpenURLContext *> *)URLContexts
+{
+    AppDelegate *appDelegate = (AppDelegate *)UIApplication.sharedApplication.delegate;
+    for (UIOpenURLContext *context in URLContexts) {
+        BOOL handled = [appDelegate application:UIApplication.sharedApplication
+                                       openURL:context.URL
+                             sourceApplication:context.options.sourceApplication
+                                    annotation:context.options.annotation];
+        NSLog(@"[OpenSDKDemo] Scene URL callback handled: %d", handled);
+    }
+}
+
+- (void)sceneDidDisconnect:(UIScene *)scene
+{
+    AppDelegate *appDelegate = (AppDelegate *)UIApplication.sharedApplication.delegate;
+    if (appDelegate.window == self.window) {
+        appDelegate.window = nil;
+    }
 }
 
 @end

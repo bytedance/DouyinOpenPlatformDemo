@@ -16,7 +16,7 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (nonatomic, strong, nonnull) UIWindow *window;
+@property (nonatomic, strong, nullable) UIWindow *window;
 
 /// 注册抖音 OpenSDK
 - (void)registerDouyinOpenSDKWithApplication:(nullable UIApplication *)application launchOptions:(nullable NSDictionary *)launchOptions;

@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # 定义要下载的 zip 文件 URL 和本地解压路径
-DOWNLOAD_URL="https://lf3-static.bytednsdoc.com/obj/eden-cn/vhojnulozbd/BDTDebugBox.framework.zip"
+DOWNLOAD_URL="https://sf3-ttcdn-tos.pstatp.com/obj/ies-douyin-opencn/open/BDTDebugBox-1.1.1.zip"
 LOCAL_PATH="LocalSpecs/BDTDebugBox/Frameworks"
 
 # 检查目标路径下是否存在已解压的框架文件及其内部的 BDTDebugBox 文件
-FRAMEWORK_FILE="$LOCAL_PATH/BDTDebugBox.framework"
-FRAMEWORK_BINARY="$FRAMEWORK_FILE/BDTDebugBox"
+FRAMEWORK_FILE="$LOCAL_PATH/BDTDebugBox.xcframework"
+FRAMEWORK_BINARY="$FRAMEWORK_FILE/ios-arm64/BDTDebugBox.framework/BDTDebugBox"
 if [ -f "$FRAMEWORK_BINARY" ]; then
 #   echo "本地已存在完整的 BDTDebugBox.framework，无需下载。"
   exit 0
