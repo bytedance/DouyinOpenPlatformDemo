@@ -33,7 +33,7 @@
 #pragma mark - Life Cycle
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // register DouyinOpenSDK
-    [self registerDouyinOpenSDKWithApplication:application launchOptions:launchOptions];
+//    [self registerDouyinOpenSDKWithApplication:application launchOptions:launchOptions];
     
     return YES;
 }
@@ -75,10 +75,6 @@
     
     // 二、注册日志回调
     [DouyinOpenSDKApplicationDelegate sharedInstance].logDelegate = self;
-#if TARGET_OS_SIMULATOR
-    // 本地抖音模拟器包未关联 Universal Link，使用 SDK 提供的 scheme 调试入口。
-    [DouyinOpenSDKApplicationDelegate sharedInstance].focusUseSchemaJump = YES;
-#endif
 }
 
 #pragma mark - DouyinOpenSDKLogDelegate
