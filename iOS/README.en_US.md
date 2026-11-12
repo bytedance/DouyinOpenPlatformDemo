@@ -58,14 +58,15 @@ Firstly, you should register **a mobile application** on [Douyin Open Platform](
 
 This change moves window creation and cold/warm URL forwarding to a single-window UIScene lifecycle. SDK initialization keeps the original flow: tap the initialization item on the capabilities page before using authorization or sharing.
 
-**Dependencies required to run Duo through the standard installation path are not yet delivered.** Before release, maintainers must complete these steps; external developers should not need local SDK builds or internal tools:
+BDTDebugBox is now version 1.1.1, with foldable-layout fixes and an XCFramework containing device arm64 and simulator arm64/x86_64 slices. A plain `pod install` downloads the public package and verifies its SHA-256; no local SDK or internal repository access is required.
+
+**A new DouyinOpenSDK release is still required before external developers can run Duo directly:**
 
 1. Publish a new DouyinOpenSDK release with arm64 iOS Simulator support. Package separate device and simulator slices in an XCFramework and retain resource bundles. A device arm64 slice is not interchangeable with a simulator slice.
-2. Deliver a compatible BDTDebugBox binary with simulator slices and foldable-layout fixes, then update this repository's download script and local podspec.
-3. Select the published SDK version in the Demo and remove simulator arm64 exclusions from the Demo and both dependency podspecs.
-4. Run a plain `pod install` from a clean checkout, then verify building, launching, authorization and sharing on Duo.
+2. Select the published SDK version in the Demo and remove simulator arm64 exclusions from the Podfile and SDK.
+3. Run a plain `pod install` from a clean checkout, then verify building, launching, authorization and sharing on Duo.
 
-Until those dependencies are updated, the Podfile retains the arm64 exclusion required by the existing packages. The Scene changes alone do not make Duo runnable. Once the dependencies are released, external developers should continue using the standard installation steps above.
+Until DouyinOpenSDK is updated, the Podfile retains the arm64 exclusion required by the existing SDK. The Scene changes alone do not make Duo runnable. Once the dependencies are released, external developers should continue using the standard installation steps above.
 
 ### Validation scope
 

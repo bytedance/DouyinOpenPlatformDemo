@@ -55,14 +55,15 @@
 
 本次改动将窗口创建和冷、热启动 URL 转发迁移到单窗口 UIScene。SDK 初始化仍保留原流程：进入功能页后点击“初始化 OpenSDK”，再使用授权、分享能力。
 
-**当前尚未完成对外可直接运行 Duo 的依赖交付。** 发布前必须完成以下事项，外部开发者无需准备本地 SDK 或配置内部工具：
+BDTDebugBox 已升级至 1.1.1，包含折叠布局修复和真机 arm64、模拟器 arm64/x86_64 的 XCFramework。普通 `pod install` 会从公开地址下载并校验 SHA-256，无需本地 SDK 或内部仓库访问权限。
+
+**当前仍需完成 DouyinOpenSDK 的正式版本交付，才能对外直接运行 Duo：
 
 1. 正式发布支持 arm64 iOS Simulator 的 DouyinOpenSDK 新版本，使用 XCFramework 分别包含真机和模拟器切片，并保留资源 bundle。真机 arm64 切片不能代替模拟器切片。
-2. 提供兼容的 BDTDebugBox 正式二进制，包含模拟器切片及折叠布局修复，更新本仓库的下载脚本和本地 podspec。
-3. 在 Demo 中指定已发布的 SDK 版本，移除 Demo 和两个依赖 podspec 中的模拟器 arm64 排除配置。
-4. 从干净 checkout 执行普通 `pod install`，在 Duo 上完成编译、启动及授权/分享验证。
+2. 在 Demo 中指定已发布的 SDK 版本，移除 Podfile 和 SDK 中的模拟器 arm64 排除配置。
+3. 从干净 checkout 执行普通 `pod install`，在 Duo 上完成编译、启动及授权/分享验证。
 
-上述依赖未更新前，当前 Podfile 仍保留旧包所需的 arm64 排除配置，不能仅凭本次 Scene 改动宣称 Duo 已可运行。依赖发布后，对外继续使用上文的正常安装步骤。
+DouyinOpenSDK 更新前，当前 Podfile 仍保留旧 SDK 所需的 arm64 排除配置，不能仅凭本次 Scene 改动宣称 Duo 已可运行。依赖发布后，对外继续使用上文的正常安装步骤。
 
 ### 验证范围
 
