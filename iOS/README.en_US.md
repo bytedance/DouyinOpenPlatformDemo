@@ -19,9 +19,8 @@ A demo for DouyinOpenSDK, to demonstrate how to integrate `DouyinOpenSDK`, this 
 
 ## Requirements
 
-- This Demo raises its minimum OS version from iOS 9.0 to **iOS 15.0**. iOS 9–14 cannot install the updated Demo; existing installations of older versions are unaffected. This requirement applies to the Demo, not to every DouyinOpenSDK release.
-- Install dependencies with CocoaPods. Duo validation used Xcode 27.1 and its iOS 27.1 simulator runtime.
-- The Demo uses a single-window UIScene lifecycle, including window creation and URL handling on ordinary iPhones.
+- iOS 15.0 or later. Projects supporting iOS 9–14 should keep SDK 4.2.5.
+- CocoaPods. Duo requires a compatible Xcode and simulator runtime; validation used Xcode 27.1 / iOS 27.1.
 
 ## Precondition
 
@@ -56,23 +55,15 @@ Firstly, you should register **a mobile application** on [Douyin Open Platform](
 
 ## Duo simulator
 
-This change moves window creation and cold/warm URL forwarding to a single-window UIScene lifecycle. SDK initialization keeps the original flow: tap the initialization item on the capabilities page before using authorization or sharing.
+The Demo uses DouyinOpenSDK 4.2.6 (authorization and sharing, without the profile card module) and BDTDebugBox 1.1.1, with arm64 simulator support. Both packages use public download URLs; `install.sh` still downloads BDTDebugBox automatically.
 
-BDTDebugBox is now version 1.1.1, with foldable-layout fixes and an XCFramework containing device arm64 and simulator arm64/x86_64 slices. A plain `pod install` downloads the public package and verifies its SHA-256; no local SDK or internal repository access is required.
+1. Run `pod install --repo-update` in the `iOS` directory.
+2. Open `DouyinOpenSDKDemo.xcworkspace`, select a Duo simulator and run.
+3. Open the capabilities page and tap the SDK initialization item.
 
-**A new DouyinOpenSDK release is still required before external developers can run Duo directly:**
+The Demo uses a single-window UIScene lifecycle and preserves manual initialization, authorization and sharing behavior. App-to-app authorization and sharing require a Douyin simulator build on the same simulator and matching clientKey, Bundle ID and URL Scheme. Implement the backend interfaces as described in `DYOpenDemoHostConfig`.
 
-1. Publish a new DouyinOpenSDK release with arm64 iOS Simulator support. Package separate device and simulator slices in an XCFramework and retain resource bundles. A device arm64 slice is not interchangeable with a simulator slice.
-2. Select the published SDK version in the Demo and remove simulator arm64 exclusions from the Podfile and SDK.
-3. Run a plain `pod install` from a clean checkout, then verify building, launching, authorization and sharing on Duo.
-
-Until DouyinOpenSDK is updated, the Podfile retains the arm64 exclusion required by the existing SDK. The Scene changes alone do not make Duo runnable. Once the dependencies are released, external developers should continue using the standard installation steps above.
-
-### Validation scope
-
-- Earlier checks with temporary validation dependencies covered Duo launch, expanded/closed/partially folded/rotated layouts, and portrait/landscape layouts on an ordinary iPhone simulator. These results do not validate the repository's current default dependencies.
-- Earlier checks covered web authorization cancellation, image-picker cancellation, and cold/warm Scene forwarding of test URLs. Test URL forwarding does not establish successful authorization or share callbacks.
-- Runtime regression after restoring manual initialization and removing the simulator-specific navigation setting remains pending, as do released-dependency installation, actual app-to-app authorization/share round trips, physical-device and older-OS regression. Token exchange still requires implementing the backend placeholders in `DYOpenDemoHostConfig`.
+Duo launch, manual initialization, folding/rotation and cancelling web authorization have been checked. App-to-app callbacks, physical devices and older OS versions remain unverified.
 
 ##  More
 
