@@ -53,29 +53,22 @@
 
 ## Duo 模拟器
 
-当前默认依赖尚未提供本次验证所用的原生 arm64 模拟器包。**仅执行普通 `pod install` 还不能运行 Duo**：默认路径仍保留旧包及模拟器 arm64 排除配置。
+本次改动将窗口创建和冷、热启动 URL 转发迁移到单窗口 UIScene。SDK 初始化仍保留原流程：进入功能页后点击“初始化 OpenSDK”，再使用授权、分享能力。
 
-1. 准备 DouyinOpenSDK 和 BDTDebugBox 的本地 CocoaPods 包，每个目录须包含对应 podspec、XCFramework 和资源 bundle。XCFramework 必须包含真正的 `arm64` **iOS Simulator** 切片，真机 arm64 切片不能代替。
-2. 在 `iOS` 目录同时指定两个包的路径：
+**当前尚未完成对外可直接运行 Duo 的依赖交付。** 发布前必须完成以下事项，外部开发者无需准备本地 SDK 或配置内部工具：
 
-   ```bash
-   DOUYIN_OPEN_SDK_PATH=/absolute/path/to/DouyinOpenSDK \
-   BDT_DEBUG_BOX_PATH=/absolute/path/to/BDTDebugBox \
-   pod install
-   ```
+1. 正式发布支持 arm64 iOS Simulator 的 DouyinOpenSDK 新版本，使用 XCFramework 分别包含真机和模拟器切片，并保留资源 bundle。真机 arm64 切片不能代替模拟器切片。
+2. 提供兼容的 BDTDebugBox 正式二进制，包含模拟器切片及折叠布局修复，更新本仓库的下载脚本和本地 podspec。
+3. 在 Demo 中指定已发布的 SDK 版本，移除 Demo 和两个依赖 podspec 中的模拟器 arm64 排除配置。
+4. 从干净 checkout 执行普通 `pod install`，在 Duo 上完成编译、启动及授权/分享验证。
 
-   只有两个变量都设置时，Podfile 才不再添加模拟器 arm64 排除；本地 podspec 也不能排除该架构。指定 BDTDebugBox 路径时，跳过旧 framework 的下载脚本。这两个变量仅用于本地依赖覆盖，不需要私有 Pod 源或内部构建工具。
-3. 打开 `DouyinOpenSDKDemo.xcworkspace`，选择 Duo 模拟器编译运行。按上文配置自己的 ClientKey、URL Scheme 和 Bundle ID；模拟器运行不需要真机签名证书。
-
-Demo 在 AppDelegate 中初始化 SDK，在 SceneDelegate 中创建窗口，并将冷启动的 `connectionOptions.URLContexts` 和热启动的 `openURLContexts` 转交 SDK。模拟器下通过公开属性 `focusUseSchemaJump` 使用 Scheme 跳转，便于联调未关联 Universal Link 的客户端包；真机不设置该属性。
-
-本地验证使用 DouyinOpenSDK 4.2.5 和 BDTDebugBox 1.1.0 的重新打包产物；BDTDebugBox 另含按容器尺寸及安全区更新布局的改动。这些依赖产物和依赖源码改动不包含在本仓库中，也未作为新版本发布。普通安装方式支持 Duo 仍需正式发布对应依赖，并更新默认依赖配置。
+上述依赖未更新前，当前 Podfile 仍保留旧包所需的 arm64 排除配置，不能仅凭本次 Scene 改动宣称 Duo 已可运行。依赖发布后，对外继续使用上文的正常安装步骤。
 
 ### 验证范围
 
-- 使用上述本地依赖，已验证 Duo 启动、展开/收起/半折叠/旋转布局，以及普通 iPhone 模拟器横竖屏。
-- 已验证网页授权取消、图片选择页取消，以及测试 URL 的冷/热启动 Scene 转发。测试 URL 转发不等于真实授权或分享回跳成功。
-- Demo → 抖音 → Demo 的真实授权/分享回跳、真机及旧系统回归尚未完成。应用间联调还需要兼容的抖音模拟器包；token 换取等接口需要实现 `DYOpenDemoHostConfig` 中的服务端占位接口。
+- 此前使用临时验证依赖，检查过 Duo 启动、展开/收起/半折叠/旋转布局，以及普通 iPhone 模拟器横竖屏；该结果不代表仓库当前默认依赖已通过。
+- 此前检查过网页授权取消、图片选择页取消，以及测试 URL 的冷/热启动 Scene 转发。测试 URL 转发不等于真实授权或分享回跳成功。
+- 恢复手动初始化、移除模拟器专用跳转配置后的运行回归，以及正式依赖安装、真实应用间授权/分享回跳、真机和旧系统回归尚未完成。token 换取等接口仍需要实现 `DYOpenDemoHostConfig` 中的服务端占位接口。
 
 # 更多文档
 

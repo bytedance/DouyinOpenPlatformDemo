@@ -56,29 +56,22 @@ Firstly, you should register **a mobile application** on [Douyin Open Platform](
 
 ## Duo simulator
 
-The default dependencies do not yet provide the native arm64 simulator packages used for this validation. **A plain `pod install` is not sufficient to run on Duo**: the default path retains the existing packages and the simulator arm64 exclusion.
+This change moves window creation and cold/warm URL forwarding to a single-window UIScene lifecycle. SDK initialization keeps the original flow: tap the initialization item on the capabilities page before using authorization or sharing.
 
-1. Prepare local CocoaPods packages for DouyinOpenSDK and BDTDebugBox. Each directory must contain its podspec, XCFramework and resource bundles. The XCFramework must include an `arm64` **iOS Simulator** slice; a device arm64 slice is not interchangeable.
-2. Set both package paths when installing from the `iOS` directory:
+**Dependencies required to run Duo through the standard installation path are not yet delivered.** Before release, maintainers must complete these steps; external developers should not need local SDK builds or internal tools:
 
-   ```bash
-   DOUYIN_OPEN_SDK_PATH=/absolute/path/to/DouyinOpenSDK \
-   BDT_DEBUG_BOX_PATH=/absolute/path/to/BDTDebugBox \
-   pod install
-   ```
+1. Publish a new DouyinOpenSDK release with arm64 iOS Simulator support. Package separate device and simulator slices in an XCFramework and retain resource bundles. A device arm64 slice is not interchangeable with a simulator slice.
+2. Deliver a compatible BDTDebugBox binary with simulator slices and foldable-layout fixes, then update this repository's download script and local podspec.
+3. Select the published SDK version in the Demo and remove simulator arm64 exclusions from the Demo and both dependency podspecs.
+4. Run a plain `pod install` from a clean checkout, then verify building, launching, authorization and sharing on Duo.
 
-   The Podfile stops adding the simulator arm64 exclusion only when both variables are set. The local podspecs must not exclude that architecture either. Setting the BDTDebugBox path also skips the old framework download script. These variables only override local dependencies; no private Pod sources or internal build tools are required.
-3. Open `DouyinOpenSDKDemo.xcworkspace`, select a Duo simulator, and build and run. Configure your ClientKey, URL Scheme and Bundle ID as described above. Simulator execution does not require a device signing certificate.
-
-AppDelegate initializes the SDK. SceneDelegate creates the window and forwards both cold-start `connectionOptions.URLContexts` and warm-start `openURLContexts` to the SDK. On simulators, the public `focusUseSchemaJump` property enables Scheme-based navigation for client packages without Universal Link association. This property is not set on devices.
-
-Local validation used repackaged DouyinOpenSDK 4.2.5 and BDTDebugBox 1.1.0. The BDTDebugBox package also includes layout changes based on container bounds and safe areas. These dependency artifacts and source changes are not included in this repository and have not been published as new releases. Supporting Duo through the default installation path still requires releasing compatible dependencies and updating the default dependency configuration.
+Until those dependencies are updated, the Podfile retains the arm64 exclusion required by the existing packages. The Scene changes alone do not make Duo runnable. Once the dependencies are released, external developers should continue using the standard installation steps above.
 
 ### Validation scope
 
-- With those local dependencies, verified Duo launch, expanded/closed/partially folded/rotated layouts, and portrait/landscape layouts on an ordinary iPhone simulator.
-- Verified web authorization cancellation, image-picker cancellation, and cold/warm Scene forwarding of test URLs. Test URL forwarding does not establish successful authorization or share callbacks.
-- Actual Demo → Douyin → Demo authorization/share round trips, physical-device regression and older-OS regression remain unverified. App-to-app testing also requires a compatible Douyin simulator package. Token exchange and related operations require implementing the backend placeholders in `DYOpenDemoHostConfig`.
+- Earlier checks with temporary validation dependencies covered Duo launch, expanded/closed/partially folded/rotated layouts, and portrait/landscape layouts on an ordinary iPhone simulator. These results do not validate the repository's current default dependencies.
+- Earlier checks covered web authorization cancellation, image-picker cancellation, and cold/warm Scene forwarding of test URLs. Test URL forwarding does not establish successful authorization or share callbacks.
+- Runtime regression after restoring manual initialization and removing the simulator-specific navigation setting remains pending, as do released-dependency installation, actual app-to-app authorization/share round trips, physical-device and older-OS regression. Token exchange still requires implementing the backend placeholders in `DYOpenDemoHostConfig`.
 
 ##  More
 

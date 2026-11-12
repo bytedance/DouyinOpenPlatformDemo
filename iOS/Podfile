@@ -1,12 +1,8 @@
 platform :ios, '15.0'
 
 target 'DouyinOpenSDKDemo' do
-  if ENV['DOUYIN_OPEN_SDK_PATH']
-    pod 'DouyinOpenSDK', :path => ENV['DOUYIN_OPEN_SDK_PATH']
-  else
-    pod 'DouyinOpenSDK'
-  end
-  pod 'BDTDebugBox', :path => ENV.fetch('BDT_DEBUG_BOX_PATH', 'LocalSpecs/BDTDebugBox')
+  pod 'DouyinOpenSDK'
+  pod 'BDTDebugBox', :path => 'LocalSpecs/BDTDebugBox'
   pod 'QBImagePickerController'
 end
 
@@ -15,15 +11,11 @@ post_install do |installer|
     target.build_configurations.each do |config|
       config.build_settings['CODE_SIGN_IDENTITY'] = ''
       config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
-      unless ENV['DOUYIN_OPEN_SDK_PATH'] && ENV['BDT_DEBUG_BOX_PATH']
-        config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
-      end
+      config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
     end
   end
 
-  unless ENV['BDT_DEBUG_BOX_PATH']
-    script_path = './install.sh'
-    system("bash", "-c", "chmod +x #{script_path} && #{script_path}")
-  end
+  script_path = './install.sh'
+  system("bash", "-c", "chmod +x #{script_path} && #{script_path}")
 
 end
